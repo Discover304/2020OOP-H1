@@ -22,9 +22,9 @@ public class FoxHoundUI {
     public static final int MENU_EXIT = 2;
 
     //print the board
+    //todo optional fancy print
+    /*@Deprecated
     public static <Char> void displayBoard(String[] players, int dimension) {
-        //todo optional fancy print
-        //todo improve or not?
         //something is wired, lines of letters has length = dimension+4, but the other part has length = dimension+2
         int length = dimension+4;
         String[][] str = new String[length][length];
@@ -117,6 +117,21 @@ public class FoxHoundUI {
             }
             System.out.println(result[i]);
         }
+    }
+
+     */
+    public static <Char> void displayBoard(String[] players, int dimension){
+        //get letter labels
+
+        //print letter labels
+
+        //get number labels
+
+        //get board+number labels
+
+        //print board+number labels
+
+        //print letter labels
     }
 
     /**

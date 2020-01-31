@@ -2,24 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ad4b4c9-dce4-418b-968b-2ece5721f6c5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileContent/fileContent.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/FoxHoundGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/FoxHoundGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/FoxHoundUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/FoxHoundUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/FoxHoundUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/FoxHoundUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment-partI.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/assignment-partI.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/FoxHoundUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FoxHoundUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FoxHoundUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FoxHoundUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/FoxHoundIOBasicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/FoxHoundIOBasicTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +59,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IgnoredFileRootStore">
@@ -258,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580509640973</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="enhanced skeleton">
+      <created>1580511584387</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1580511584387</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -303,10 +301,10 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="369" y="170" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.720@0.0.1280.720" timestamp="1580400423371" />
-    <state x="445" y="79" key="#com.intellij.ide.util.MemberChooser" timestamp="1580402320042">
+    <state x="445" y="79" key="#com.intellij.ide.util.MemberChooser" timestamp="1580512228867">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="445" y="79" key="#com.intellij.ide.util.MemberChooser/0.0.1280.720@0.0.1280.720" timestamp="1580402320042" />
+    <state x="445" y="79" key="#com.intellij.ide.util.MemberChooser/0.0.1280.720@0.0.1280.720" timestamp="1580512228867" />
     <state x="370" y="144" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1580461228766">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
@@ -319,10 +317,10 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="395" y="69" key="#xdebugger.evaluate/0.0.1280.720@0.0.1280.720" timestamp="1580498314855" />
-    <state x="198" y="0" key="CommitChangelistDialog2" timestamp="1580509639064">
+    <state x="198" y="0" key="CommitChangelistDialog2" timestamp="1580511582591">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="198" y="0" key="CommitChangelistDialog2/0.0.1280.720@0.0.1280.720" timestamp="1580509639064" />
+    <state x="198" y="0" key="CommitChangelistDialog2/0.0.1280.720@0.0.1280.720" timestamp="1580511582591" />
     <state width="1236" height="208" key="GridCell.Tab.0.bottom" timestamp="1580511513420">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
@@ -355,6 +353,10 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state width="1236" height="267" key="GridCell.Tab.1.right/0.0.1280.720@0.0.1280.720" timestamp="1580504743712" />
+    <state x="327" y="97" key="VcsDiffUtil.ChangesDialog" timestamp="1580512458526">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="327" y="97" key="VcsDiffUtil.ChangesDialog/0.0.1280.720@0.0.1280.720" timestamp="1580512458526" />
     <state x="348" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1580507590673">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
