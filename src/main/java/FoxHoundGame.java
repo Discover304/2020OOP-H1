@@ -60,6 +60,8 @@ public class FoxHoundGame {
             //show the status of game
             FoxHoundUI.displayBoard(players, dim);
 
+            //todo this is the correct position to see who is win
+
             //only require the commend line input as choice
             int choice = FoxHoundUI.mainMenuQuery(turn, STDIN_SCAN);
             

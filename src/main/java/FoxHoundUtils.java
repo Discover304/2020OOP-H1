@@ -38,4 +38,42 @@ public class FoxHoundUtils {
         //String[] hello = {"B1","D1","D4","H1","C8"};//this is a test input
         return str;
     }
+
+    //see if the entred movememtn is correct
+    public static boolean isValidMove(int dim, String[] players, char figure, String origin, String destination){
+        boolean result = true;
+
+        /*
+          the only difference between H and F is the direction they can move
+          so, without switch we can assign a value to a variable to validate some movement or not
+         */
+        int key = -1;//set default value of Fox backward movement validation
+        if (figure == 'H'){
+            key = 0;//invalidate backward movememnt of Hound
+        }
+
+        //this is the main part to see validity, useing while is because any of the following false the relust is false
+        while(true){
+            //todo correct origin compare players and figure and origin
+            if (result == false) break;
+            //todo correct range of destination, take destination and dim
+            if (result == false) break;
+            //todo correct destination, no player at destination
+            if (result == false) break;
+            //todo correct move generate position function and see if the value of destination from origin of the figure is valid
+            if (result == false) break;
+            break;
+        }
+
+        return result;
+    }
+
+    public static boolean isFoxWin(String position){
+        //the y direction == 1
+        return false;//test
+    }
+
+    public static boolean isHoundWin(String[] positions, int dim){
+        return false;//test
+    }
 }

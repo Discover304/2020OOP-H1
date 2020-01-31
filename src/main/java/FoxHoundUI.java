@@ -1,4 +1,6 @@
 import java.io.StringReader;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Scanner;
 import java.util.Objects;
 
@@ -154,6 +156,30 @@ public class FoxHoundUI {
         }
 
         return input;
+    }
+
+    // ask for next movment.
+    public static String[] positionQuery(int dim, Scanner stdin){
+        String[] result = new String[2];
+        boolean validity = false;
+
+        //main while loop
+        while(!validity){
+            //todo print menu
+
+            result[0] = stdin.next();
+            result[1] = stdin.next();
+
+            //todo check validity
+
+        }
+        return result;
+    }
+
+    public static Path fileQuery(Scanner stdin) {
+        //todo
+        Path path = Paths.get("D:\\Users\\Hobart\\Documents\\A_Study\\2_OOP\\Assignment\\inf1b-cw1\\src\\main\\resources\\data");
+        return path;
     }
 }
 
