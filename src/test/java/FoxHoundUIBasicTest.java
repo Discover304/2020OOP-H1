@@ -3,7 +3,6 @@ import java.io.PrintStream;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.util.Scanner;
-import java.nio.file.Path;
 
 import static org.junit.Assert.*;
 import org.junit.Before;
@@ -233,7 +232,7 @@ public class FoxHoundUIBasicTest {
         String inputLine = "path/to/file/game01.txt";
         String expected = inputLine;
         Scanner TEST_IN = new Scanner(new ByteArrayInputStream(inputLine.getBytes()));
-        Path result = FoxHoundUI.fileQuery(TEST_IN);
+        String result = FoxHoundUI.fileQuery(TEST_IN);
         TEST_IN.close();
 
         assertEquals("Resulting path not as expected.", expected, result.toString());

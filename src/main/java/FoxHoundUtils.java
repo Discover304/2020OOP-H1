@@ -12,7 +12,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class FoxHoundUtils {
 
     /** Default dimension of the game board in case none is specified. */
-    public static final int DEFAULT_DIM = 4;
+    public static final int DEFAULT_DIM = 8;
 
     /** Minimum possible dimension of the game board. */
     public static final int MIN_DIM = 4;

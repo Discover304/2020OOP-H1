@@ -1,9 +1,5 @@
-import java.io.StringReader;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Scanner;
 import java.util.Objects;
-import java.util.concurrent.ScheduledExecutorService;
 
 /**
  * A utility class for the fox hound program.
@@ -172,8 +168,8 @@ public class FoxHoundUI {
         //main while loop
         while(!validity){
             //print menu
-            System.out.println("Provide origin and destination coordinates. ");
-            System.out.println("Enter two positions between A1-H8: ");
+            System.out.print("Provide origin and destination coordinates.\n");
+            System.out.print("Enter two positions between A1-H8:\n");
 
             //read input
             result[0] = stdin.next();
@@ -211,15 +207,20 @@ public class FoxHoundUI {
             }
 
             //todo output error message
-            if (!validity) System.out.println("Please enter valid coordinate pair separated by space. ");
+            if (!validity) {
+                System.err.println("ERROR: Please enter valid coordinate pair separated by space. ");
+                System.out.print("\n");
+            }
         }
         return result;
     }
 
     //import saved status
-    public static Path fileQuery(Scanner stdin) {
+    public static String fileQuery(Scanner stdin) {
         //todo file save
-        Path path = Paths.get("D:\\Users\\Hobart\\Documents\\A_Study\\2_OOP\\Assignment\\inf1b-cw1\\src\\main\\resources\\data");
+        System.out.print("Enter file path:\n");
+        //todo is it ok to change Path type to String?
+        String path = stdin.next();
         return path;
     }
 }
