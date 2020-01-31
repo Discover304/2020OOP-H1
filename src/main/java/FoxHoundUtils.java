@@ -12,7 +12,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class FoxHoundUtils {
 
     /** Default dimension of the game board in case none is specified. */
-    public static final int DEFAULT_DIM = 8;
+    public static final int DEFAULT_DIM = 4;
 
     /** Minimum possible dimension of the game board. */
     public static final int MIN_DIM = 4;
@@ -47,17 +47,18 @@ public class FoxHoundUtils {
         return str;
     }
 
-    //see if the entred movememtn is correct todo some thing wrong this part.
+    //see if the entred movememtn is correct
     public static boolean isValidMove(int dim, String[] players, char figure, String origin, String destination){
 
         //read the position variable from input
-        int[] num = new int[players.length];
-        char[] letters = new char[players.length];
-        for (int i = 0; i<players.length; i++){
-            int[] temp = read(players[i],dim);
-            letters[i] = (char)temp[0];
-            num[i] = temp[1];
-        }
+        int[] num = new int[2];
+        char[] letters = new char[2];
+        int[] temp = read(origin,dim);
+        letters[0] = (char)temp[0];
+        num[0] = temp[1];
+        temp = read(destination,dim);
+        letters[1] = (char)temp[0];
+        num[1] = temp[1];
 
         //this is the main part to see validity
         boolean result = true;
@@ -68,9 +69,13 @@ public class FoxHoundUtils {
             breakpoint:
             switch (figure){
                 case 'H':{
-                    for (int i = 0; i<players.length-1-1;i++){
-                        if (i<players.length-1-1 && players[i].equals(origin)) {
-                            result = true;
+                    for (int i = 0; i<players.length-2;i++){
+                        if (players[i].equals(origin)) {
+                            break breakpoint;
+                        }
+                    }
+                    for (String i : players){
+                        if (i.equals(origin)) {
                             break breakpoint;
                         }
                     }
@@ -78,8 +83,7 @@ public class FoxHoundUtils {
                     break;//breakpoint
                 }
                 case 'F':{
-                    if (players[players.length-1-1].equals(origin)) {
-                        result = true;
+                    if (players[players.length-1].equals(origin)) {
                         break;//breakpoint
                     }
                     result = false;
@@ -89,7 +93,7 @@ public class FoxHoundUtils {
 
             //correct range of destination, take destination and dim
             for (char i:letters){
-                if (i - 64 > dim){
+                if ((i - 64) > dim){
                     result = false;
                 }
             }
@@ -117,6 +121,7 @@ public class FoxHoundUtils {
             switch (figure){
                 case 'H':{
                     result = ds[1] == os[1]+1 && (ds[0] == os[0]+1 || ds[0] == os[0]-1);
+                    break;
                 }
                 case 'F':{
                     result = (ds[1] == os[1]+1 || ds[1] == os[1]-1) && (ds[0] == os[0]+1 || ds[0] == os[0]-1);
