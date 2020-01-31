@@ -68,7 +68,20 @@ public class FoxHoundGame {
             // handle menu choices
             switch(choice) {
                 case FoxHoundUI.MENU_MOVE:
-                    //todo this is the correct position to ask the gamer for next move.
+                    while (true){
+                        String[] newPosition = FoxHoundUI.positionQuery(FoxHoundUtils.DEFAULT_DIM, STDIN_SCAN);
+                        if (FoxHoundUtils.isValidMove(FoxHoundUtils.DEFAULT_DIM, players, turn, newPosition[0], newPosition[1])){
+                            for (int i = 0; i<players.length; i++){
+                                if (players[i].equals(newPosition[0])){
+                                    players[i] = newPosition[1];
+                                    break;
+                                }
+                            }
+                            break;
+                        }
+                        //todo print error message
+                        System.out.println("Invalid move. Try again!");
+                    }
                     turn = swapPlayers(turn);
                     break;
                 case FoxHoundUI.MENU_EXIT:

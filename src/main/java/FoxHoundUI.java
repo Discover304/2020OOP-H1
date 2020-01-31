@@ -3,6 +3,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Scanner;
 import java.util.Objects;
+import java.util.concurrent.ScheduledExecutorService;
 
 /**
  * A utility class for the fox hound program.
@@ -14,15 +15,19 @@ public class FoxHoundUI {
 
     /** Number of main menu entries. */
     private static final int MENU_ENTRIES = 2;
+
     /** Main menu display string. */
     private static final String MAIN_MENU = "\n1. Move\n2. Exit\n\nEnter 1 - 2:";
+
     /** Menu entry to select a move action. */
     public static final int MENU_MOVE = 1;
+
     /** Menu entry to terminate the program. */
     public static final int MENU_EXIT = 2;
 
-    //todo optional fancy print
+    //print the board
     public static <Char> void displayBoard(String[] players, int dimension) {
+        //todo optional fancy print
         //todo improve or not?
         //something is wired, lines of letters has length = dimension+4, but the other part has length = dimension+2
         int length = dimension+4;
@@ -127,6 +132,7 @@ public class FoxHoundUI {
      * @throws IllegalArgumentException if the given figure type is invalid
      * @throws NullPointerException if the given Scanner is null
      */
+    //main menu interface
     public static int mainMenuQuery(char figureToMove, Scanner stdin) {
         Objects.requireNonNull(stdin, "Given Scanner must not be null");
         if (figureToMove != FoxHoundUtils.FOX_FIELD && figureToMove != FoxHoundUtils.HOUND_FIELD) {
@@ -158,26 +164,61 @@ public class FoxHoundUI {
         return input;
     }
 
-    // ask for next movment.
+    // ask for next movement.
     public static String[] positionQuery(int dim, Scanner stdin){
-        String[] result = new String[2];
         boolean validity = false;
+        String[] result = new String[2];
 
         //main while loop
         while(!validity){
-            //todo print menu
+            //print menu
+            System.out.println("Provide origin and destination coordinates. ");
+            System.out.println("Enter two positions between A1-H8: ");
 
+            //read input
             result[0] = stdin.next();
             result[1] = stdin.next();
 
-            //todo check validity
+            //check validity
+            char[][] chars = new char[2][];
+            chars[0] = result[0].toCharArray();
+            chars[1] = result[1].toCharArray();
+            breakpoint:
+            for (char[] x: chars){
+                //Character.isUpperCase(x[0]);
+                if (Character.isLetter(x[0])){//todo ignore lower case input?
+                    if (dim>9){
+                        if (x.length==3&&Character.isDigit(x[1])&&Character.isDigit(x[2]));
+                        else if (x.length==2&&Character.isDigit(x[1]));
+                        else {
+                            validity = false;
+                            break breakpoint;
+                        }
+                    }
+                    else if (dim<=9){
+                        if (x.length==2&&Character.isDigit(x[1]));
+                        else {
+                            validity = false;
+                            break breakpoint;
+                        }
+                    }
+                }
+                else {
+                    validity = false;
+                    break breakpoint;
+                }
+                validity = true;
+            }
 
+            //todo output error message
+            if (!validity) System.out.println("Please enter valid coordinate pair separated by space. ");
         }
         return result;
     }
 
+    //import saved status
     public static Path fileQuery(Scanner stdin) {
-        //todo
+        //todo file save
         Path path = Paths.get("D:\\Users\\Hobart\\Documents\\A_Study\\2_OOP\\Assignment\\inf1b-cw1\\src\\main\\resources\\data");
         return path;
     }

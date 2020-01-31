@@ -13,13 +13,16 @@ public class FoxHoundUtils {
 
     /** Default dimension of the game board in case none is specified. */
     public static final int DEFAULT_DIM = 8;
+
     /** Minimum possible dimension of the game board. */
     public static final int MIN_DIM = 4;
+
     /** Maximum possible dimension of the game board. */
     public static final int MAX_DIM = 26;
 
     /** Symbol to represent a hound figure. */
     public static final char HOUND_FIELD = 'H';
+
     /** Symbol to represent the fox figure. */
     public static final char FOX_FIELD = 'F';
 
@@ -44,7 +47,7 @@ public class FoxHoundUtils {
         return str;
     }
 
-    //see if the entred movememtn is correct
+    //see if the entred movememtn is correct todo some thing wrong this part.
     public static boolean isValidMove(int dim, String[] players, char figure, String origin, String destination){
 
         //read the position variable from input
@@ -125,6 +128,7 @@ public class FoxHoundUtils {
         return result;
     }
 
+    //read the position value
     public static int[] read(String str, int dim){
         //origin position get
         int[] result = new int[2];
@@ -140,11 +144,13 @@ public class FoxHoundUtils {
         return result;
     }
 
+    //winning condition
     public static boolean isFoxWin(String position){
         //the y direction == 1
         return false;//test
     }
 
+    //winning condition
     public static boolean isHoundWin(String[] positions, int dim){
         return false;//test
     }
