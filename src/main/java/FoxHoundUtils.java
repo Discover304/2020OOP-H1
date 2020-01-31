@@ -1,3 +1,8 @@
+import javax.swing.plaf.metal.MetalBorders;
+import java.util.Arrays;
+import java.util.Scanner;
+import java.util.concurrent.ConcurrentHashMap;
+
 /**
  * A utility class for the fox hound program.
  * 
@@ -41,30 +46,97 @@ public class FoxHoundUtils {
 
     //see if the entred movememtn is correct
     public static boolean isValidMove(int dim, String[] players, char figure, String origin, String destination){
+
+        //read the position variable from input
+        int[] num = new int[players.length];
+        char[] letters = new char[players.length];
+        for (int i = 0; i<players.length; i++){
+            int[] temp = read(players[i],dim);
+            letters[i] = (char)temp[0];
+            num[i] = temp[1];
+        }
+
+        //this is the main part to see validity
         boolean result = true;
-
-        /*
-          the only difference between H and F is the direction they can move
-          so, without switch we can assign a value to a variable to validate some movement or not
-         */
-        int key = -1;//set default value of Fox backward movement validation
-        if (figure == 'H'){
-            key = 0;//invalidate backward movememnt of Hound
-        }
-
-        //this is the main part to see validity, useing while is because any of the following false the relust is false
+        //useing while is because any of the following false the result is false
         while(true){
-            //todo correct origin compare players and figure and origin
-            if (result == false) break;
-            //todo correct range of destination, take destination and dim
-            if (result == false) break;
-            //todo correct destination, no player at destination
-            if (result == false) break;
-            //todo correct move generate position function and see if the value of destination from origin of the figure is valid
-            if (result == false) break;
-            break;
-        }
 
+            //correct origin compare players and figure and origin
+            breakpoint:
+            switch (figure){
+                case 'H':{
+                    for (int i = 0; i<players.length-1-1;i++){
+                        if (i<players.length-1-1 && players[i].equals(origin)) {
+                            result = true;
+                            break breakpoint;
+                        }
+                    }
+                    result = false;
+                    break;//breakpoint
+                }
+                case 'F':{
+                    if (players[players.length-1-1].equals(origin)) {
+                        result = true;
+                        break;//breakpoint
+                    }
+                    result = false;
+                }
+            }
+            if (result == false) break;//while
+
+            //correct range of destination, take destination and dim
+            for (char i:letters){
+                if (i - 64 > dim){
+                    result = false;
+                }
+            }
+            for (int i:num){
+                if (i > dim){
+                    result=false;
+                }
+            }
+            if (result == false) break;//while
+
+            //correct destination, no player at destination
+            for (String i:players){
+                if (i.equals(destination)){
+                    result = false;
+                    break;
+                }
+            }
+            if (result == false) break;//while
+
+            //correct move generate position function and see if the value of destination from origin of the figure is valid
+            //origin position get
+            int[] os = read(origin,dim);
+            // destination position get
+            int[] ds = read(destination,dim);
+            switch (figure){
+                case 'H':{
+                    result = ds[1] == os[1]+1 && (ds[0] == os[0]+1 || ds[0] == os[0]-1);
+                }
+                case 'F':{
+                    result = (ds[1] == os[1]+1 || ds[1] == os[1]-1) && (ds[0] == os[0]+1 || ds[0] == os[0]-1);
+                }
+            }
+
+            break;//while
+        }
+        return result;
+    }
+
+    public static int[] read(String str, int dim){
+        //origin position get
+        int[] result = new int[2];
+        char[] bs = str.toCharArray();
+        result[0] = bs[0];
+        //handling with 2 digit bumbers
+        String stringNum = Character.toString(bs[1]);
+        if ((dim > 9) && (bs.length == 3)){
+            stringNum += Character.toString(bs[2]);
+            //System.out.println(as[2]);//testing if as[2] exist
+        }
+        result[1] = Integer.parseInt(stringNum);
         return result;
     }
 
