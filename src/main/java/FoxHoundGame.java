@@ -60,7 +60,13 @@ public class FoxHoundGame {
             //show the status of game
             FoxHoundUI.displayBoard(players, dim);
 
-            //todo this is the correct position to see who is win
+            //see who is win
+            if (FoxHoundUtils.isFoxWin(players[players.length-1])){
+                System.out.println("The Fox wins!");
+            }
+            if (FoxHoundUtils.isHoundWin(players, dim)){
+                System.out.println("The Hounds wins!");
+            }
 
             //only require the commend line input as choice
             int choice = FoxHoundUI.mainMenuQuery(turn, STDIN_SCAN);
@@ -79,7 +85,6 @@ public class FoxHoundGame {
                             }
                             break;
                         }
-                        //todo print error message
                         System.out.println("Invalid move. Try again!");
                     }
                     turn = swapPlayers(turn);

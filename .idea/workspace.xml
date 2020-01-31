@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8ad4b4c9-dce4-418b-968b-2ece5721f6c5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/FoxHoundGame.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/FoxHoundUI.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/FoxHoundUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
+    <list default="true" id="8ad4b4c9-dce4-418b-968b-2ece5721f6c5" name="Default Changelist" comment="enhanced skeleton">
+      <change afterPath="$PROJECT_DIR$/src/main/java/flow.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileContent/fileContent.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/FoxHoundGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/FoxHoundGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/FoxHoundUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/FoxHoundUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/FoxHoundUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/FoxHoundUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/test.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CODESTRUCTURE20200128.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FoxHoundGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FoxHoundGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/FoxHoundUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FoxHoundUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -231,7 +222,21 @@
       <option name="project" value="LOCAL" />
       <updated>1580483739849</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="debugged">
+      <created>1580505427320</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1580505427320</updated>
+    </task>
+    <task id="LOCAL-00007" summary="enhanced skeleton">
+      <created>1580505487601</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1580505487601</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -251,6 +256,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Commented" />
     <MESSAGE value="TODO list" />
+    <MESSAGE value="debugged" />
     <MESSAGE value="enhanced skeleton" />
     <option name="LAST_COMMIT_MESSAGE" value="enhanced skeleton" />
   </component>
@@ -283,10 +289,10 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="395" y="69" key="#xdebugger.evaluate/0.0.1280.720@0.0.1280.720" timestamp="1580498314855" />
-    <state x="198" y="0" key="CommitChangelistDialog2" timestamp="1580505425579">
+    <state x="198" y="0" key="CommitChangelistDialog2" timestamp="1580505485891">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="198" y="0" key="CommitChangelistDialog2/0.0.1280.720@0.0.1280.720" timestamp="1580505425579" />
+    <state x="198" y="0" key="CommitChangelistDialog2/0.0.1280.720@0.0.1280.720" timestamp="1580505485891" />
     <state width="1236" height="267" key="GridCell.Tab.0.bottom" timestamp="1580504743711">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
@@ -319,26 +325,26 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state width="1236" height="267" key="GridCell.Tab.1.right/0.0.1280.720@0.0.1280.720" timestamp="1580504743712" />
-    <state x="348" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1580503641690">
+    <state x="348" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1580507590673">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="348" y="188" key="com.intellij.ide.util.TipDialog/0.0.1280.720@0.0.1280.720" timestamp="1580503641690" />
+    <state x="348" y="188" key="com.intellij.ide.util.TipDialog/0.0.1280.720@0.0.1280.720" timestamp="1580507590673" />
     <state x="451" y="279" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1580396079604">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="451" y="279" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.720@0.0.1280.720" timestamp="1580396079604" />
-    <state x="296" y="160" key="run.anything.popup" timestamp="1580477568911">
+    <state x="296" y="160" key="run.anything.popup" timestamp="1580505773300">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="296" y="160" key="run.anything.popup/0.0.1280.720@0.0.1280.720" timestamp="1580477568911" />
+    <state x="296" y="160" key="run.anything.popup/0.0.1280.720@0.0.1280.720" timestamp="1580505773300" />
     <state x="508" y="248" key="save.project.as.template.dialog" timestamp="1580468991506">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="508" y="248" key="save.project.as.template.dialog/0.0.1280.720@0.0.1280.720" timestamp="1580468991506" />
-    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup" timestamp="1580470527179">
+    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup" timestamp="1580509439332">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup/0.0.1280.720@0.0.1280.720" timestamp="1580470527179" />
+    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup/0.0.1280.720@0.0.1280.720" timestamp="1580509439332" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

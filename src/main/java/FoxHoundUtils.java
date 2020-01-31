@@ -53,10 +53,10 @@ public class FoxHoundUtils {
         //read the position variable from input
         int[] num = new int[2];
         char[] letters = new char[2];
-        int[] temp = read(origin,dim);
+        int[] temp = read(origin);
         letters[0] = (char)temp[0];
         num[0] = temp[1];
-        temp = read(destination,dim);
+        temp = read(destination);
         letters[1] = (char)temp[0];
         num[1] = temp[1];
 
@@ -115,9 +115,9 @@ public class FoxHoundUtils {
 
             //correct move generate position function and see if the value of destination from origin of the figure is valid
             //origin position get
-            int[] os = read(origin,dim);
+            int[] os = read(origin);
             // destination position get
-            int[] ds = read(destination,dim);
+            int[] ds = read(destination);
             switch (figure){
                 case 'H':{
                     result = ds[1] == os[1]+1 && (ds[0] == os[0]+1 || ds[0] == os[0]-1);
@@ -134,14 +134,14 @@ public class FoxHoundUtils {
     }
 
     //read the position value
-    public static int[] read(String str, int dim){
+    public static int[] read(String str){
         //origin position get
         int[] result = new int[2];
         char[] bs = str.toCharArray();
         result[0] = bs[0];
         //handling with 2 digit bumbers
         String stringNum = Character.toString(bs[1]);
-        if ((dim > 9) && (bs.length == 3)){
+        if (bs.length == 3){
             stringNum += Character.toString(bs[2]);
             //System.out.println(as[2]);//testing if as[2] exist
         }
@@ -151,12 +151,34 @@ public class FoxHoundUtils {
 
     //winning condition
     public static boolean isFoxWin(String position){
-        //the y direction == 1
-        return false;//test
+        int[] as = read(position);
+        return (as[1] == 1);//test
     }
 
     //winning condition
     public static boolean isHoundWin(String[] positions, int dim){
-        return false;//test
+        int[][] posi = new int[positions.length][2];
+        for (int i = 0; i<positions.length; i++){
+            posi[i] = read (positions[i]);
+        }
+
+        //fox can move?
+        int[][] availablePosition = new int[4][2];
+        availablePosition[0] = new int[] {posi[positions.length-1][0]+1,posi[positions.length-1][0]+1};
+        availablePosition[1] = new int[] {posi[positions.length-1][0]-1,posi[positions.length-1][0]+1};
+        availablePosition[2] = new int[] {posi[positions.length-1][0]+1,posi[positions.length-1][0]-1};
+        availablePosition[3] = new int[] {posi[positions.length-1][0]-1,posi[positions.length-1][0]-1};
+
+        String[] converted = new String[4];
+        boolean result = true;
+        for (int i = 0; i<4; i++){
+            converted[i] = Character.toString(availablePosition[i][0]) + availablePosition[i][1];
+            if (isValidMove(dim, positions, 'F', positions[positions.length-1], converted[i])){
+                result = false;
+                break;
+            }
+        }
+
+        return result;//test
     }
 }
