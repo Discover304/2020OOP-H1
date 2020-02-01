@@ -28,7 +28,8 @@ public class FoxHoundUtils {
 
     //initialisePositions when start the program
     public static String[] initialisePositions(int dimension) {
-        int numPlayers = dimension/2+1;
+        int dim = Math.abs(dimension);//todo not sure how to takle with dimension < 0
+        int numPlayers = dim/2+1;
         String[] str = new String[numPlayers];
 
         //position of Hound
@@ -37,10 +38,10 @@ public class FoxHoundUtils {
         }
 
         //position of Fox
-        if ((dimension/2)%2==0)
-            str[numPlayers-1] = Character.toString((char) (64+(dimension+1)/2+1)) + dimension;
+        if ((dim/2)%2==0)
+            str[numPlayers-1] = Character.toString((char) (64+(dim+1)/2+1)) + dim;
         else
-            str[numPlayers-1] = Character.toString((char) (64+dimension/2+1)) + dimension;
+            str[numPlayers-1] = Character.toString((char) (64+dim/2+1)) + dim;
 
         //System.out.println(str[numPlayers-1]);//this is a test to see if fox is at the correct position
         //String[] hello = {"B1","D1","D4","H1","C8"};//this is a test input
@@ -52,12 +53,12 @@ public class FoxHoundUtils {
 
         //read the position variable from input
         int[] num = new int[2];
-        char[] letters = new char[2];
+        int[] letters = new int[2];
         int[] temp = read(origin);
-        letters[0] = (char)temp[0];
+        letters[0] = temp[0];
         num[0] = temp[1];
         temp = read(destination);
-        letters[1] = (char)temp[0];
+        letters[1] = temp[0];
         num[1] = temp[1];
 
         //this is the main part to see validity
@@ -92,8 +93,8 @@ public class FoxHoundUtils {
             if (result == false) break;//while
 
             //correct range of destination, take destination and dim
-            for (char i:letters){
-                if ((i - 64) > dim){
+            for (int i:letters){
+                if (i > dim){
                     result = false;
                 }
             }
@@ -138,7 +139,7 @@ public class FoxHoundUtils {
         //origin position get
         int[] result = new int[2];
         char[] bs = str.toCharArray();
-        result[0] = bs[0];
+        result[0] = bs[0] - 64;
         //handling with 2 digit bumbers
         String stringNum = Character.toString(bs[1]);
         if (bs.length == 3){
@@ -157,22 +158,18 @@ public class FoxHoundUtils {
 
     //winning condition
     public static boolean isHoundWin(String[] positions, int dim){
-        int[][] posi = new int[positions.length][2];
-        for (int i = 0; i<positions.length; i++){
-            posi[i] = read (positions[i]);
-        }
-
+        int[] foxMove = FoxHoundUtils.read(positions[positions.length-1]);
         //fox can move?
         int[][] availablePosition = new int[4][2];
-        availablePosition[0] = new int[] {posi[positions.length-1][0]+1,posi[positions.length-1][0]+1};
-        availablePosition[1] = new int[] {posi[positions.length-1][0]-1,posi[positions.length-1][0]+1};
-        availablePosition[2] = new int[] {posi[positions.length-1][0]+1,posi[positions.length-1][0]-1};
-        availablePosition[3] = new int[] {posi[positions.length-1][0]-1,posi[positions.length-1][0]-1};
+        availablePosition[0] = new int[] {foxMove[0]+1,foxMove[1]+1};
+        availablePosition[0] = new int[] {foxMove[0]-1,foxMove[1]+1};
+        availablePosition[0] = new int[] {foxMove[0]+1,foxMove[1]-1};
+        availablePosition[0] = new int[] {foxMove[0]-1,foxMove[1]-1};
 
         String[] converted = new String[4];
         boolean result = true;
         for (int i = 0; i<4; i++){
-            converted[i] = Character.toString(availablePosition[i][0]) + availablePosition[i][1];
+            converted[i] = Character.toString(availablePosition[i][0]+64) + availablePosition[i][1];
             if (isValidMove(dim, positions, 'F', positions[positions.length-1], converted[i])){
                 result = false;
                 break;

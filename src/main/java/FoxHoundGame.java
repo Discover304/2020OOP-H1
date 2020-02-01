@@ -63,9 +63,11 @@ public class FoxHoundGame {
             //see who is win
             if (FoxHoundUtils.isFoxWin(players[players.length-1])){
                 System.out.println("The Fox wins!");
+                break;
             }
             if (FoxHoundUtils.isHoundWin(players, dim)){
                 System.out.println("The Hounds wins!");
+                break;
             }
 
             //only require the commend line input as choice

@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Objects;
 
@@ -120,18 +121,69 @@ public class FoxHoundUI {
     }
 
      */
-    public static <Char> void displayBoard(String[] players, int dimension){
+    public static <Char> void displayBoard(String[] players, int dim){
         //get letter labels
-
-        //print letter labels
+        if (dim<10) System.out.print("  ");
+        else System.out.print("   ");
+        char[] letters = new char[dim];
+        for(int i = 0; i<dim; i++){
+            letters[i] = (char) ('A'+i);
+            System.out.print(letters[i]);
+        }
+        if (dim<10) System.out.print("  ");
+        else System.out.print("   ");
+        System.out.print("\n");
+        System.out.print("\n");
 
         //get number labels
+        String[] numbers = new String[dim];
+        if(dim<9){
+            for(int i = 0; i<dim; i++){
+                numbers[i] = Integer.toString(i+1);
+            }
+        }
+        else {
+            for(int i = 0; i<dim; i++){
+                if (i<9){
+                    numbers[i] = "0" + (i + 1);
+                }
+                else numbers[i] = Integer.toString(i+1);
+            }
+        }
 
-        //get board+number labels
+        //get board
+        char[][] posi = new char[dim][dim];
+        for (int i = 0; i<dim; i++){
+            for (int j = 0; j<dim; j++) posi[i][j] = '.';
+        }
+
+        //place players on board
+        for (int i = 0; i< players.length; i++){
+            int[] temp = FoxHoundUtils.read(players[i]);
+            if(i == players.length-1){
+                posi [temp[0]-1][temp[1]-1] = FoxHoundUtils.FOX_FIELD;
+                break;
+            }
+            posi [temp[0]-1][temp[1]-1] = FoxHoundUtils.HOUND_FIELD;
+        }
 
         //print board+number labels
+        for (int i = 0; i<dim; i++){
+            System.out.print(numbers[i]+" ");
+            for (int j = 0; j<dim; j++) System.out.print(posi[j][i]);
+            System.out.print(" "+numbers[i]+"\n");
+        }
 
         //print letter labels
+        System.out.print("\n");
+        if (dim<10) System.out.print("  ");
+        else System.out.print("   ");
+        for(int i = 0; i<dim; i++){
+            System.out.print(letters[i]);
+        }
+        if (dim<10) System.out.print("  ");
+        else System.out.print("   ");
+        System.out.print("\n");
     }
 
     /**
