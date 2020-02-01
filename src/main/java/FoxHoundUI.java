@@ -242,14 +242,15 @@ public class FoxHoundUI {
             result[0] = stdin.next();
             result[1] = stdin.next();
 
+            //todo the upper case test
+            //I handled it by accepting cases such as "a4 B3", but then using a toUpper() function.
             //check validity
             char[][] chars = new char[2][];
             chars[0] = result[0].toCharArray();
             chars[1] = result[1].toCharArray();
             breakpoint:
             for (char[] x: chars){
-                //Character.isUpperCase(x[0]);
-                if (Character.isLetter(x[0])){//todo ignore lower case input?
+                if (Character.isLetter(x[0])){
                     if (dim>9){
                         if (x.length==3&&Character.isDigit(x[1])&&Character.isDigit(x[2]));
                         else if (x.length==2&&Character.isDigit(x[1]));
@@ -273,7 +274,6 @@ public class FoxHoundUI {
                 validity = true;
             }
 
-            //todo output error message
             if (!validity) {
                 System.err.println("ERROR: Please enter valid coordinate pair separated by space. ");
                 System.out.print("\n");
