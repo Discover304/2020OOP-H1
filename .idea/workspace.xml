@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8ad4b4c9-dce4-418b-968b-2ece5721f6c5" name="Default Changelist" comment="enhanced skeleton">
+    <list default="true" id="8ad4b4c9-dce4-418b-968b-2ece5721f6c5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -9,17 +9,10 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/FoxHoundGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/FoxHoundGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/FoxHoundUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/FoxHoundUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/FoxHoundUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/FoxHoundUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/test.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FoxHoundGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FoxHoundGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/FoxHoundUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FoxHoundUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FoxHoundUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FoxHoundUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,8 +169,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.FoxHoundUIBasicTest" />
         <item itemvalue="Gradle.inf1b-cw1 [test]" />
+        <item itemvalue="Gradle.FoxHoundUIBasicTest" />
         <item itemvalue="Application.FoxHoundGame" />
         <item itemvalue="Application.test" />
         <item itemvalue="Application.test (1)" />
@@ -277,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580512531187</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="none">
+      <created>1580521342806</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1580521342806</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -299,7 +299,8 @@
     <MESSAGE value="TODO list" />
     <MESSAGE value="debugged" />
     <MESSAGE value="enhanced skeleton" />
-    <option name="LAST_COMMIT_MESSAGE" value="enhanced skeleton" />
+    <MESSAGE value="none" />
+    <option name="LAST_COMMIT_MESSAGE" value="none" />
   </component>
   <component name="WindowStateProjectService">
     <state x="232" y="22" key="#Code_Folding" timestamp="1580457645223">
@@ -338,26 +339,26 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="395" y="69" key="#xdebugger.evaluate/0.0.1280.720@0.0.1280.720" timestamp="1580498314855" />
-    <state x="198" y="0" key="CommitChangelistDialog2" timestamp="1580512664696">
+    <state x="198" y="0" key="CommitChangelistDialog2" timestamp="1580522270756">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="198" y="0" key="CommitChangelistDialog2/0.0.1280.720@0.0.1280.720" timestamp="1580512664696" />
-    <state width="1236" height="138" key="GridCell.Tab.0.bottom" timestamp="1580521171984">
+    <state x="198" y="0" key="CommitChangelistDialog2/0.0.1280.720@0.0.1280.720" timestamp="1580522270756" />
+    <state width="1236" height="271" key="GridCell.Tab.0.bottom" timestamp="1580522149700">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1236" height="138" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1580521171984" />
-    <state width="1236" height="138" key="GridCell.Tab.0.center" timestamp="1580521171984">
+    <state width="1236" height="271" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1580522149700" />
+    <state width="1236" height="271" key="GridCell.Tab.0.center" timestamp="1580522149700">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1236" height="138" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1580521171984" />
-    <state width="1236" height="138" key="GridCell.Tab.0.left" timestamp="1580521171984">
+    <state width="1236" height="271" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1580522149700" />
+    <state width="1236" height="271" key="GridCell.Tab.0.left" timestamp="1580522149700">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1236" height="138" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1580521171984" />
-    <state width="1236" height="138" key="GridCell.Tab.0.right" timestamp="1580521171984">
+    <state width="1236" height="271" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1580522149700" />
+    <state width="1236" height="271" key="GridCell.Tab.0.right" timestamp="1580522149700">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1236" height="138" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1580521171984" />
+    <state width="1236" height="271" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1580522149700" />
     <state width="1236" height="149" key="GridCell.Tab.1.bottom" timestamp="1580520537279">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
@@ -374,10 +375,10 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state width="1236" height="149" key="GridCell.Tab.1.right/0.0.1280.720@0.0.1280.720" timestamp="1580520537279" />
-    <state x="232" y="85" key="Vcs.Push.Dialog.v2" timestamp="1580512544919">
+    <state x="232" y="85" key="Vcs.Push.Dialog.v2" timestamp="1580521374595">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="232" y="85" key="Vcs.Push.Dialog.v2/0.0.1280.720@0.0.1280.720" timestamp="1580512544919" />
+    <state x="232" y="85" key="Vcs.Push.Dialog.v2/0.0.1280.720@0.0.1280.720" timestamp="1580521374595" />
     <state x="327" y="97" key="VcsDiffUtil.ChangesDialog" timestamp="1580512458526">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
