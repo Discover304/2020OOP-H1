@@ -1,8 +1,6 @@
-import java.io.IOException;
-import java.nio.file.Path;
 import java.util.Scanner;
 
-/**
+/** 
  * The Main class of the fox hound program.
  * 
  * It contains the main game loop where main menu interactions
@@ -10,7 +8,7 @@ import java.util.Scanner;
   */
 public class FoxHoundGame {
 
-    /**
+    /** 
      * This scanner can be used by the program to read from
      * the standard input. 
      * 
@@ -47,67 +45,24 @@ public class FoxHoundGame {
      * @param dim the dimension of the game board
      * @param players current position of all figures on the board in board coordinates
      */
-    private static void gameLoop(int dim, String[] players) throws Exception {
+    private static void gameLoop(int dim, String[] players) {
 
-        // start this game with Fox
+        // start each game with the Fox
         char turn = FoxHoundUtils.FOX_FIELD;
-
-        //then give a while loop for the game processing
         boolean exit = false;
         while(!exit) {
-
-            //show the board
             System.out.println("\n#################################");
-
-            //show the status of game
             FoxHoundUI.displayBoard(players, dim);
 
-            //see who is win
-            if (FoxHoundUtils.isFoxWin(players[players.length-1])){
-                System.out.println("The Fox wins!");
-                break;
-            }
-            if (FoxHoundUtils.isHoundWin(players, dim)){
-                System.out.println("The Hounds wins!");
-                break;
-            }
-
-            //only require the commend line input as choice
             int choice = FoxHoundUI.mainMenuQuery(turn, STDIN_SCAN);
             
-            // handle menu choices
+            // handle menu choice
             switch(choice) {
                 case FoxHoundUI.MENU_MOVE:
-                    while (true){
-                        String[] newPosition = FoxHoundUI.positionQuery(FoxHoundUtils.DEFAULT_DIM, STDIN_SCAN);
-                        if (FoxHoundUtils.isValidMove(FoxHoundUtils.DEFAULT_DIM, players, turn, newPosition[0], newPosition[1])){
-                            for (int i = 0; i<players.length; i++){
-                                if (players[i].equals(newPosition[0])){
-                                    players[i] = newPosition[1];
-                                    break;
-                                }
-                            }
-                            break;
-                        }
-                        System.out.println("Invalid move. Try again!");
-                    }
                     turn = swapPlayers(turn);
                     break;
-                case FoxHoundUI.GAME_SAVE:
-                    Path pathSave = FoxHoundUI.fileQuery(STDIN_SCAN);
-                    FoxHoundIO.SaveGame(players,turn,pathSave);
-                    exit = true;
-                    break;
-                case FoxHoundUI.GAME_LOAD:
-                    Path pathLoad = FoxHoundUI.fileQuery(STDIN_SCAN);
-                    String[] newPosition = FoxHoundIO.LoadGame(pathLoad);
-                    for (int i = 1; i<newPosition.length; i++){
-                        players[i-1] = newPosition[i];
-                    }
-                    turn = newPosition[0].toCharArray()[0];//todo not cool
-                    break;
                 case FoxHoundUI.MENU_EXIT:
-                    exit = true;//break the while loop
+                    exit = true;
                     break;
                 default:
                     System.err.println("ERROR: invalid menu choice: " + choice);
@@ -130,18 +85,14 @@ public class FoxHoundGame {
      * @param args contain the command line arguments where the first can be
      * board dimensions.
      */
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 
-        //pass constant
         int dimension = FoxHoundUtils.DEFAULT_DIM;
 
-        //initialise the positions of all players
         String[] players = FoxHoundUtils.initialisePositions(dimension);
-
-        //this players is initial value, so, changing the value of players is in gameloop
         gameLoop(dimension, players);
 
-        // Close the scanner reading the standard input stream
+        // Close the scanner reading the standard input stream       
         STDIN_SCAN.close();
     }
 }

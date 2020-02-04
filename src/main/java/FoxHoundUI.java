@@ -1,3 +1,5 @@
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Objects;
@@ -11,24 +13,23 @@ import java.util.Objects;
 public class FoxHoundUI {
 
     /** Number of main menu entries. */
-    private static final int MENU_ENTRIES = 2;
+    private static final int MENU_ENTRIES = 4;
 
     /** Main menu display string. */
-    private static final String MAIN_MENU = "\n1. Move\n2. Exit\n\nEnter 1 - 2:";
+    private static final String MAIN_MENU = "\n1. Move\n2. Save Game\n3. Load Game\n4. Exit\nEnter 1 - 4:";
 
     /** Menu entry to select a move action. */
     public static final int MENU_MOVE = 1;
-
-    /** Menu entry to terminate the program. */
-    public static final int MENU_EXIT = 4;
 
     public static final int GAME_SAVE = 2;
 
     public static final int GAME_LOAD = 3;
 
+    /** Menu entry to terminate the program. */
+    public static final int MENU_EXIT = 4;
+
     //print the board
     //todo optional fancy print
-
     public static <Char> void displayBoard(String[] players, int dim){
         //get letter labels
         if (dim<10) System.out.print("  ");
@@ -191,11 +192,13 @@ public class FoxHoundUI {
     }
 
     //import saved status
-    public static String fileQuery(Scanner stdin) {
-        //todo file save
+    public static Path fileQuery(Scanner stdin) {
         System.out.print("Enter file path:\n");
-        //todo is it ok to change Path type to String?
-        String path = stdin.next();
+        //todo containing file name.
+        //todo not replacing previous same name file under same directory
+        //Path filename = path.getFileName();
+        //System.out.println("Filename: " + filename);
+        Path path = Paths.get(stdin.next());
         return path;
     }
 }
