@@ -91,6 +91,10 @@ public class FoxHoundGame {
                     }
                     turn = swapPlayers(turn);
                     break;
+                case FoxHoundUI.GAME_SAVE:
+
+                case FoxHoundUI.GAME_LOAD:
+
                 case FoxHoundUI.MENU_EXIT:
                     exit = true;//break the while loop
                     break;
