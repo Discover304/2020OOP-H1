@@ -1,4 +1,3 @@
-import java.io.IOException;
 import java.nio.file.Path;
 import java.util.Scanner;
 
@@ -95,16 +94,26 @@ public class FoxHoundGame {
                     break;
                 case FoxHoundUI.GAME_SAVE:
                     Path pathSave = FoxHoundUI.fileQuery(STDIN_SCAN);
-                    FoxHoundIO.SaveGame(players,turn,pathSave);
-                    exit = true;
+                    if (pathSave == null) break;
+                    boolean isSuccessful = FoxHoundIO.saveGame(players,turn,pathSave);
+                    if (isSuccessful){
+                        exit = true;
+                        break;
+                    }
+                    System.out.println("ERROR: Saving file failed.");
                     break;
                 case FoxHoundUI.GAME_LOAD:
                     Path pathLoad = FoxHoundUI.fileQuery(STDIN_SCAN);
-                    String[] newPosition = FoxHoundIO.LoadGame(pathLoad);
-                    for (int i = 1; i<newPosition.length; i++){
-                        players[i-1] = newPosition[i];
+                    if (pathLoad.equals(null)) break;
+                    char temp = FoxHoundIO.loadGame(players,pathLoad);
+                    if (temp == '#'){
+                        System.out.println("Loading from file failed.");
+                        break;
                     }
-                    turn = newPosition[0].toCharArray()[0];//todo not cool
+                    //if (players.length!=dim){
+                    //    dim = (players.length-1)*2;
+                    //}//they are for varying dimension
+                    turn = temp;
                     break;
                 case FoxHoundUI.MENU_EXIT:
                     exit = true;//break the while loop

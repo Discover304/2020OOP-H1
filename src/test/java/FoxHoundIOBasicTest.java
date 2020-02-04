@@ -27,11 +27,11 @@ public class FoxHoundIOBasicTest {
     // ------------------------- loadGame --------------------
 
     private void checkLoadedData(Path input, String[] expectedPlayers, char expectedFigure) {
-        String[] players = defaultPlayers;
+        String[] players = defaultPlayers.clone();//todo something wrong here
         char nextFigure = FoxHoundIO.loadGame(players, input);
+        //System.out.println(players[0]); players[] here doesn't change
 
         assertArrayEquals("Loaded player array not as expected.", expectedPlayers, players);
-
         assertEquals("Loaded next move not as expected.", expectedFigure, nextFigure);
     }
     
@@ -91,7 +91,7 @@ public class FoxHoundIOBasicTest {
 
     @Test
     public void testLoadGameInvalidFile() {
-        Path input = Paths.get("path/to/unlikely/file.txt");
+        Path input = Paths.get("path","to","unlikely","file.txt");
         String[] expectedPlayers = defaultPlayers.clone();
         char expectedFigure = LOAD_ERROR;
 
@@ -153,7 +153,7 @@ public class FoxHoundIOBasicTest {
         String[] expected = defaultPlayers;
         String[] players = expected.clone();
         char nextMove = FoxHoundUtils.FOX_FIELD;
-        Path saveFile = Paths.get("path/to/a/file/that/does/not/exist/game.txt");
+        Path saveFile = Paths.get("path","to","a","file","that","does","not","exist","game.txt");
         boolean result = FoxHoundIO.saveGame(players, nextMove, saveFile);
 
         assertFalse("Save not expected to be successful.", result);

@@ -24,7 +24,7 @@ public class FoxHoundUtils {
     // HINT Write your own constants here to improve code readability ...
 
     public static String[] initialisePositions(int dimension) {
-        // TODO implement me
+
         return null;
     }
 }

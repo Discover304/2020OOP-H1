@@ -1,6 +1,5 @@
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Objects;
 
@@ -151,12 +150,10 @@ public class FoxHoundUI {
             result[0] = stdin.next();
             result[1] = stdin.next();
 
-            //todo the upper case test
-            //I handled it by accepting cases such as "a4 B3", but then using a toUpper() function.
             //check validity
             char[][] chars = new char[2][];
-            chars[0] = result[0].toCharArray();
-            chars[1] = result[1].toCharArray();
+            chars[0] = result[0].toUpperCase().toCharArray();
+            chars[1] = result[1].toUpperCase().toCharArray();
             breakpoint:
             for (char[] x: chars){
                 if (Character.isLetter(x[0])){
@@ -194,11 +191,16 @@ public class FoxHoundUI {
     //import saved status
     public static Path fileQuery(Scanner stdin) {
         System.out.print("Enter file path:\n");
-        //todo containing file name.
-        //todo not replacing previous same name file under same directory
-        //Path filename = path.getFileName();
-        //System.out.println("Filename: " + filename);
-        Path path = Paths.get(stdin.next());
+
+        //get the path
+        Path path;
+        try {
+            path = Paths.get(stdin.nextLine());
+        } catch (Exception e) {
+            path = null;
+            return path;
+        }
+
         return path;
     }
 }

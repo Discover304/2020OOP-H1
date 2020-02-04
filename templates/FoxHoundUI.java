@@ -21,7 +21,7 @@ public class FoxHoundUI {
     public static final int MENU_EXIT = 2;
 
     public static void displayBoard(String[] players, int dimension) {
-        // TODO implement me
+
     }
 
     /**

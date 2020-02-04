@@ -2,6 +2,7 @@ import javax.swing.plaf.metal.MetalBorders;
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.logging.ErrorManager;
 
 /**
  * A utility class for the fox hound program.
@@ -27,8 +28,8 @@ public class FoxHoundUtils {
     public static final char FOX_FIELD = 'F';
 
     //initialisePositions when start the program
-    public static String[] initialisePositions(int dimension) {
-        int dim = Math.abs(dimension);//todo not sure how to takle with dimension < 0
+    public static String[] initialisePositions(int dim) {
+        if (dim <= 0) throw new IllegalArgumentException("Negative dimension");
         int numPlayers = dim/2+1;
         String[] str = new String[numPlayers];
 
@@ -50,7 +51,7 @@ public class FoxHoundUtils {
 
     //see if the entred movememtn is correct
     public static boolean isValidMove(int dim, String[] players, char figure, String origin, String destination){
-
+        if (dim <= 0) throw new IllegalArgumentException("Negative dimension");
         //read the position variable from input
         int[] num = new int[2];
         int[] letters = new int[2];
@@ -65,7 +66,6 @@ public class FoxHoundUtils {
         boolean result = true;
         //useing while is because any of the following false the result is false
         while(true){
-
             //correct origin compare players and figure and origin
             breakpoint:
             switch (figure){
