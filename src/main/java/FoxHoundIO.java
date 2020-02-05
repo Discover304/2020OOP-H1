@@ -13,10 +13,12 @@ import java.util.Scanner;
 public class FoxHoundIO {
     public static boolean saveGame(String[] players, char turn, Path pathSave){
         //basic test
-        if (Files.exists(pathSave)) return false;
+        //todo give a better way to make this part better
         if(pathSave == null) throw new NullPointerException("no path");
+        if (Files.exists(pathSave)) return false;
         if(players.length != FoxHoundUtils.initialisePositions(FoxHoundUtils.DEFAULT_DIM).length)
-            throw new IllegalArgumentException("Something is wrong");
+            throw new IllegalArgumentException("dimension is wrong");
+
 
         FileWriter outFile;
         try {
@@ -26,27 +28,37 @@ public class FoxHoundIO {
             for (String i : players) outFile.write(i+" ");
             outFile.close();
             return true;
-
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             return false;
         }
     }
 
     public static char loadGame(String[] players, Path pathLoad){
         if (pathLoad == null) throw new NullPointerException("path is empty");
+        if (!Files.exists(pathLoad)) return '#';
 
         //testing same dimension
         if(players.length != FoxHoundUtils.initialisePositions(FoxHoundUtils.DEFAULT_DIM).length)
             throw new IllegalArgumentException("Something is wrong");
 
         //is modified board
-        for (int i = 0;i<players.length;i++)
-            if (!players[i].equals(FoxHoundUtils.initialisePositions(FoxHoundUtils.DEFAULT_DIM)[i])) {
-                return '#';
+        label:
+        for (int i = 0;i<players.length-1;i++) {
+            for (int j = 0;j<players.length-1;j++) {
+                if (players[j].equals(FoxHoundUtils.initialisePositions(FoxHoundUtils.DEFAULT_DIM)[j])){
+                    continue label;
+                }
+            }
+            return '#';
         }
+        if (!players[players.length-1].equals(FoxHoundUtils.initialisePositions(FoxHoundUtils.DEFAULT_DIM)[players.length-1]))
+            return '#';
+
+
 
         //take the value from txt
-        Scanner scan = null;
+        Scanner scan;
         try {
             scan = new Scanner(pathLoad);
         } catch (Exception e) {

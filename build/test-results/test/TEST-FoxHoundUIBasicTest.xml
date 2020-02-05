@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="FoxHoundUIBasicTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2020-02-04T23:03:09" hostname="DESKTOP-6FO5S7R" time="0.024">
+<testsuite name="FoxHoundUIBasicTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2020-02-05T00:21:56" hostname="DESKTOP-6FO5S7R" time="0.041">
   <properties/>
   <testcase name="testDisplayBoard" classname="FoxHoundUIBasicTest" time="0.003"/>
-  <testcase name="testPositionQueryMessage" classname="FoxHoundUIBasicTest" time="0.015"/>
-  <testcase name="testPositionQueryError" classname="FoxHoundUIBasicTest" time="0.001"/>
+  <testcase name="testPositionQueryMessage" classname="FoxHoundUIBasicTest" time="0.021"/>
+  <testcase name="testPositionQueryError" classname="FoxHoundUIBasicTest" time="0.002"/>
   <testcase name="testPositionQueryReturn" classname="FoxHoundUIBasicTest" time="0.002"/>
-  <testcase name="testFileQueryReturn" classname="FoxHoundUIBasicTest" time="0.002"/>
-  <testcase name="testFileQueryMessage" classname="FoxHoundUIBasicTest" time="0.001"/>
+  <testcase name="testFileQueryReturn" classname="FoxHoundUIBasicTest" time="0.009"/>
+  <testcase name="testFileQueryMessage" classname="FoxHoundUIBasicTest" time="0.003"/>
   <system-out><![CDATA[Provide origin and destination coordinates.
 Enter two positions between A1-H8:
 Enter file path:

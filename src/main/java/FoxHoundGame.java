@@ -78,8 +78,8 @@ public class FoxHoundGame {
             switch(choice) {
                 case FoxHoundUI.MENU_MOVE:
                     while (true){
-                        String[] newPosition = FoxHoundUI.positionQuery(FoxHoundUtils.DEFAULT_DIM, STDIN_SCAN);
-                        if (FoxHoundUtils.isValidMove(FoxHoundUtils.DEFAULT_DIM, players, turn, newPosition[0], newPosition[1])){
+                        String[] newPosition = FoxHoundUI.positionQuery(dim, STDIN_SCAN);
+                        if (FoxHoundUtils.isValidMove(dim, players, turn, newPosition[0], newPosition[1])){
                             for (int i = 0; i<players.length; i++){
                                 if (players[i].equals(newPosition[0])){
                                     players[i] = newPosition[1];
@@ -97,7 +97,8 @@ public class FoxHoundGame {
                     if (pathSave == null) break;
                     boolean isSuccessful = FoxHoundIO.saveGame(players,turn,pathSave);
                     if (isSuccessful){
-                        exit = true;
+
+                        turn = FoxHoundUtils.FOX_FIELD;
                         break;
                     }
                     System.out.println("ERROR: Saving file failed.");
@@ -107,7 +108,6 @@ public class FoxHoundGame {
                     if (pathLoad.equals(null)) break;
                     char temp = FoxHoundIO.loadGame(players,pathLoad);
                     if (temp == '#'){
-                        System.out.println("Loading from file failed.");
                         break;
                     }
                     //if (players.length!=dim){
@@ -140,9 +140,10 @@ public class FoxHoundGame {
      * board dimensions.
      */
     public static void main(String[] args) throws Exception {
-
         //pass constant
-        int dimension = FoxHoundUtils.DEFAULT_DIM;
+        int dimension;
+        if (args == null) dimension = FoxHoundUtils.DEFAULT_DIM;
+        else dimension = Integer.parseInt(args[0]);
 
         //initialise the positions of all players
         String[] players = FoxHoundUtils.initialisePositions(dimension);

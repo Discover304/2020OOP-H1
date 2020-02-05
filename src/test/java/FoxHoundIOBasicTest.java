@@ -143,7 +143,7 @@ public class FoxHoundIOBasicTest {
         // using Java libraries and not another function to be implemented.
         // Since that would, however, reveal the solution, we are 
         // doing it this way.
-        nextMove = FoxHoundIO.loadGame(players, saveFile);
+        nextMove = FoxHoundIO.loadGame(players, saveFile);//this players[] has some kind of value todo
         assertArrayEquals("Saved players array not as expected.", expected, players);
         assertEquals("Saved next move not as expected.", expectedMove, nextMove);
     }

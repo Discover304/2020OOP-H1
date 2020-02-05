@@ -198,7 +198,6 @@ public class FoxHoundUI {
             path = Paths.get(stdin.nextLine());
         } catch (Exception e) {
             path = null;
-            return path;
         }
 
         return path;

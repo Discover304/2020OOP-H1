@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="FoxHoundIOBasicTest" tests="9" skipped="0" failures="2" errors="0" timestamp="2020-02-04T23:03:09" hostname="DESKTOP-6FO5S7R" time="0.032">
+<testsuite name="FoxHoundIOBasicTest" tests="9" skipped="0" failures="3" errors="0" timestamp="2020-02-05T00:21:56" hostname="DESKTOP-6FO5S7R" time="0.051">
   <properties/>
-  <testcase name="testLoadGameInvalidFile" classname="FoxHoundIOBasicTest" time="0.009"/>
-  <testcase name="testLoadGameValidInput" classname="FoxHoundIOBasicTest" time="0.004">
+  <testcase name="testLoadGameInvalidFile" classname="FoxHoundIOBasicTest" time="0.005"/>
+  <testcase name="testLoadGameValidInput" classname="FoxHoundIOBasicTest" time="0.005">
     <failure message="Loaded player array not as expected.: arrays first differed at element [0]; expected:&lt;[C2]&gt; but was:&lt;[B1]&gt;" type="org.junit.internal.ArrayComparisonFailure">Loaded player array not as expected.: arrays first differed at element [0]; expected:&lt;[C2]&gt; but was:&lt;[B1]&gt;
 	at org.junit.internal.ComparisonCriteria.arrayEquals(ComparisonCriteria.java:55)
 	at org.junit.Assert.internalArrayEquals(Assert.java:532)
@@ -66,12 +66,56 @@ Caused by: org.junit.ComparisonFailure: expected:&lt;[C2]&gt; but was:&lt;[B1]&g
 </failure>
   </testcase>
   <testcase name="testSaveGamePathNull" classname="FoxHoundIOBasicTest" time="0.0"/>
-  <testcase name="testLoadGamePlayersNonDefaultDim" classname="FoxHoundIOBasicTest" time="0.0"/>
-  <testcase name="testLoadGameInvalidFileContent" classname="FoxHoundIOBasicTest" time="0.002"/>
-  <testcase name="testSaveGamePlayersNonDefaultDim" classname="FoxHoundIOBasicTest" time="0.005"/>
-  <testcase name="testSaveGameInvalidPath" classname="FoxHoundIOBasicTest" time="0.003"/>
-  <testcase name="testLoadGamePathNull" classname="FoxHoundIOBasicTest" time="0.0"/>
-  <testcase name="testSaveGameValidInput" classname="FoxHoundIOBasicTest" time="0.006">
+  <testcase name="testLoadGamePlayersNonDefaultDim" classname="FoxHoundIOBasicTest" time="0.001">
+    <failure message="java.lang.AssertionError: Expected exception: java.lang.IllegalArgumentException" type="java.lang.AssertionError">java.lang.AssertionError: Expected exception: java.lang.IllegalArgumentException
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:32)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:118)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:175)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:157)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+</failure>
+  </testcase>
+  <testcase name="testLoadGameInvalidFileContent" classname="FoxHoundIOBasicTest" time="0.004"/>
+  <testcase name="testSaveGamePlayersNonDefaultDim" classname="FoxHoundIOBasicTest" time="0.006"/>
+  <testcase name="testSaveGameInvalidPath" classname="FoxHoundIOBasicTest" time="0.002"/>
+  <testcase name="testLoadGamePathNull" classname="FoxHoundIOBasicTest" time="0.001"/>
+  <testcase name="testSaveGameValidInput" classname="FoxHoundIOBasicTest" time="0.023">
     <failure message="java.lang.AssertionError: Saved next move not as expected. expected:&lt;70&gt; but was:&lt;35&gt;" type="java.lang.AssertionError">java.lang.AssertionError: Saved next move not as expected. expected:&lt;70&gt; but was:&lt;35&gt;
 	at org.junit.Assert.fail(Assert.java:88)
 	at org.junit.Assert.failNotEquals(Assert.java:834)
