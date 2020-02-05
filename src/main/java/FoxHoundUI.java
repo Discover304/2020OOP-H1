@@ -140,7 +140,7 @@ public class FoxHoundUI {
         boolean validity = false;
         String[] result = new String[2];
 
-        //main while loop
+        //check validity
         while(!validity){
             //print menu
             System.out.print("Provide origin and destination coordinates.\n");
@@ -150,7 +150,7 @@ public class FoxHoundUI {
             result[0] = stdin.next();
             result[1] = stdin.next();
 
-            //check validity
+            //this is the main part
             char[][] chars = new char[2][];
             chars[0] = result[0].toUpperCase().toCharArray();
             chars[1] = result[1].toUpperCase().toCharArray();
@@ -180,9 +180,13 @@ public class FoxHoundUI {
                 validity = true;
             }
 
-            if (!validity) {
-                System.err.println("ERROR: Please enter valid coordinate pair separated by space. ");
-                System.out.print("\n");
+            try{
+                if (!validity) {
+                    throw new IllegalArgumentException();
+                }
+            }
+            catch (IllegalArgumentException e){
+                System.out.print("Please enter valid coordinate pair separated by space.");
             }
         }
         return result;
@@ -193,13 +197,7 @@ public class FoxHoundUI {
         System.out.print("Enter file path:\n");
 
         //get the path
-        Path path;
-        try {
-            path = Paths.get(stdin.nextLine());
-        } catch (Exception e) {
-            path = null;
-        }
-
+        Path path = Paths.get(stdin.nextLine());
         return path;
     }
 }

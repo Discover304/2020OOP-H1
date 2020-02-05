@@ -13,16 +13,41 @@ import java.util.Scanner;
 public class FoxHoundIO {
     public static boolean saveGame(String[] players, char turn, Path pathSave){
         //basic test
-        //todo give a better way to make this part better
-        if(pathSave == null) throw new NullPointerException("no path");
-        if (Files.exists(pathSave)) return false;
-        if(players.length != FoxHoundUtils.initialisePositions(FoxHoundUtils.DEFAULT_DIM).length)
-            throw new IllegalArgumentException("dimension is wrong");
+        //is the path good
+        try{
+            if(pathSave == null)
+                throw new NullPointerException();
+        }
+        catch (Exception e){
+            System.out.println("no path given");
+            return false;
+        }
 
+        //is path not exits
+        try{
+            if (Files.exists(pathSave))
+                throw new IllegalArgumentException();
+        }
+        catch (Exception e){
+            System.out.println("file exists is wrong");
+            return false;
+        }
 
+        //is the dimension equals to default
+        //todo may conflict with ADVANCED part
+        try {
+            if(players.length != FoxHoundUtils.initialisePositions(FoxHoundUtils.DEFAULT_DIM).length)
+                throw new IllegalArgumentException();
+        }
+        catch (IllegalArgumentException e){
+            System.out.println("dimension is not default");
+            return false;
+        }
+
+        //save part
+        //start to write file
         FileWriter outFile;
         try {
-            //write file
             outFile = new FileWriter(String.valueOf(pathSave));
             outFile.write(turn +" ");
             for (String i : players) outFile.write(i+" ");
@@ -30,17 +55,43 @@ public class FoxHoundIO {
             return true;
         }
         catch (Exception e) {
+            System.out.println("saving process has some error");
             return false;
         }
     }
 
     public static char loadGame(String[] players, Path pathLoad){
-        if (pathLoad == null) throw new NullPointerException("path is empty");
-        if (!Files.exists(pathLoad)) return '#';
+        //test part
+        //if path good
+        try{
+          if (pathLoad.toString().isEmpty()) {
+              throw new NullPointerException();
+          }
+        }
+        catch (NullPointerException e){
+            System.out.println("path is empty");
+            return '#';
+        }
 
-        //testing same dimension
-        if(players.length != FoxHoundUtils.initialisePositions(FoxHoundUtils.DEFAULT_DIM).length)
-            throw new IllegalArgumentException("Something is wrong");
+        //is path exists
+        try{
+            if (!Files.exists(pathLoad))
+                throw new IllegalArgumentException();;
+        }
+        catch (Exception e){
+            System.out.println("file is not exists");
+            return '#';
+        }
+
+        //testing things are at there initial position, for default dimension todo extend to all dimension
+        try{
+            if(players.length != FoxHoundUtils.initialisePositions(FoxHoundUtils.DEFAULT_DIM).length)
+                throw new IllegalArgumentException();
+        }
+        catch (IllegalArgumentException e){
+            System.out.println("dimension is not match");
+            return '#';
+        }
 
         //is modified board
         label:
@@ -55,37 +106,32 @@ public class FoxHoundIO {
         if (!players[players.length-1].equals(FoxHoundUtils.initialisePositions(FoxHoundUtils.DEFAULT_DIM)[players.length-1]))
             return '#';
 
-
-
+        //loading part
         //take the value from txt
         Scanner scan;
         try {
             scan = new Scanner(pathLoad);
         } catch (Exception e) {
+            System.out.println("loading process has some error");
             return '#';
         }
         char[] as = scan.nextLine().toCharArray();
         scan.close();
 
+        //pass values
         String[] str = new String[(as.length-2+1)/3+1];
         str[0]=Character.toString(as[0]);
         for (int i = 2; i<as.length; i+=3){
             str[(i+1)/3]=""+as[i]+as[i+1];
         }
 
-
-
         //update board
         for (int i = 1; i<str.length; i++){
             players[i-1] = str[i];
             //System.out.print(players[i-1]+"\n");//players[i-1] do changed
         }
-
-        //if (players.equals(FoxHoundUtils.initialisePositions(FoxHoundUtils.DEFAULT_DIM))) {
-        //    return '#';
-        //}  //may be helpful
-
         char turn = str[0].toCharArray()[0];
+
         return turn;
     }
 }

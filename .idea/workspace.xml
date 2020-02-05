@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ad4b4c9-dce4-418b-968b-2ece5721f6c5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/FoxHoundGame.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/FoxHoundIO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/FoxHoundUI.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/FoxHoundUtils.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -13,11 +17,10 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment-partI.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/assignment-partI.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/FoxHoundGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/FoxHoundGame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/FoxHoundIO.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/FoxHoundIO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/FoxHoundUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/FoxHoundUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/FoxHoundIOBasicTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/FoxHoundIOBasicTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/FoxHoundUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/FoxHoundUtils.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/FoxHoundIOBasicTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/FoxHoundIOBasicTest.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/FoxHoundUIBasicTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/FoxHoundUIBasicTest.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/FoxHoundUtilsBasicTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/FoxHoundUtilsBasicTest.html" afterDir="false" />
@@ -26,11 +29,13 @@
       <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-FoxHoundIOBasicTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-FoxHoundIOBasicTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-FoxHoundUIBasicTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-FoxHoundUIBasicTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-FoxHoundUtilsBasicTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-FoxHoundUtilsBasicTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/FoxHoundGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FoxHoundGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/FoxHoundIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FoxHoundIO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/FoxHoundUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FoxHoundUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/FoxHoundIOBasicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FoxHoundIOBasicTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FoxHoundUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FoxHoundUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,21 +123,22 @@
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Users\Hobart\Documents\A_Study\2_OOP\Assignment\inf1b-cw1\src\test\java" />
+      <recent name="D:\Users\Hobart\Documents\A_Study\2_OOP\Assignment\inf1b-cw1\src\test\resources" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Users\Hobart\Documents\A_Study\2_OOP\Assignment\inf1b-cw1\src\test\java" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Users\Hobart\Documents\A_Study\2_OOP\Assignment\inf1b-cw1\src\test\java" />
-      <recent name="D:\Users\Hobart\Documents\A_Study\2_OOP\Assignment\inf1b-cw1\src\test\resources" />
-    </key>
   </component>
   <component name="RunManager" selected="Gradle.inf1b-cw1 [test]">
     <configuration name="FoxHoundGame" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="FoxHoundGame" />
       <module name="inf1b-cw1.main" />
+      <option name="PROGRAM_PARAMETERS" value="-11" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -359,7 +365,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580857455812</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="final maybe">
+      <created>1580862291379</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1580862291379</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -382,7 +395,8 @@
     <MESSAGE value="debugged" />
     <MESSAGE value="enhanced skeleton" />
     <MESSAGE value="none" />
-    <option name="LAST_COMMIT_MESSAGE" value="none" />
+    <MESSAGE value="final maybe" />
+    <option name="LAST_COMMIT_MESSAGE" value="final maybe" />
   </component>
   <component name="WindowStateProjectService">
     <state x="232" y="22" key="#Code_Folding" timestamp="1580457645223">
@@ -397,10 +411,10 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="232" y="22" key="#Project_Structure/0.0.1280.720@0.0.1280.720" timestamp="1580827171410" />
-    <state x="94" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580861383105">
+    <state x="94" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580904436671">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="94" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.720@0.0.1280.720" timestamp="1580861383105" />
+    <state x="94" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.720@0.0.1280.720" timestamp="1580904436671" />
     <state x="113" y="88" width="1096" height="536" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1580854823490">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
@@ -429,46 +443,46 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="395" y="69" key="#xdebugger.evaluate/0.0.1280.720@0.0.1280.720" timestamp="1580498314855" />
-    <state x="198" y="0" key="CommitChangelistDialog2" timestamp="1580857454296">
+    <state x="198" y="0" key="CommitChangelistDialog2" timestamp="1580862289795">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="198" y="0" key="CommitChangelistDialog2/0.0.1280.720@0.0.1280.720" timestamp="1580857454296" />
+    <state x="198" y="0" key="CommitChangelistDialog2/0.0.1280.720@0.0.1280.720" timestamp="1580862289795" />
     <state x="420" y="118" key="FileChooserDialogImpl" timestamp="1580720972498">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="420" y="118" key="FileChooserDialogImpl/0.0.1280.720@0.0.1280.720" timestamp="1580720972498" />
-    <state width="1236" height="272" key="GridCell.Tab.0.bottom" timestamp="1580862143705">
+    <state width="1236" height="227" key="GridCell.Tab.0.bottom" timestamp="1580914036660">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1236" height="272" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1580862143705" />
-    <state width="1236" height="272" key="GridCell.Tab.0.center" timestamp="1580862143705">
+    <state width="1236" height="227" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1580914036660" />
+    <state width="1236" height="227" key="GridCell.Tab.0.center" timestamp="1580914036660">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1236" height="272" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1580862143705" />
-    <state width="1236" height="272" key="GridCell.Tab.0.left" timestamp="1580862143705">
+    <state width="1236" height="227" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1580914036660" />
+    <state width="1236" height="227" key="GridCell.Tab.0.left" timestamp="1580914036660">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1236" height="272" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1580862143705" />
-    <state width="1236" height="272" key="GridCell.Tab.0.right" timestamp="1580862143705">
+    <state width="1236" height="227" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1580914036660" />
+    <state width="1236" height="227" key="GridCell.Tab.0.right" timestamp="1580914036660">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1236" height="272" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1580862143705" />
-    <state width="1236" height="253" key="GridCell.Tab.1.bottom" timestamp="1580856784715">
+    <state width="1236" height="227" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1580914036660" />
+    <state width="1236" height="253" key="GridCell.Tab.1.bottom" timestamp="1580914036654">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1236" height="253" key="GridCell.Tab.1.bottom/0.0.1280.720@0.0.1280.720" timestamp="1580856784715" />
-    <state width="1236" height="253" key="GridCell.Tab.1.center" timestamp="1580856784715">
+    <state width="1236" height="253" key="GridCell.Tab.1.bottom/0.0.1280.720@0.0.1280.720" timestamp="1580914036654" />
+    <state width="1236" height="253" key="GridCell.Tab.1.center" timestamp="1580914036654">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1236" height="253" key="GridCell.Tab.1.center/0.0.1280.720@0.0.1280.720" timestamp="1580856784715" />
-    <state width="1236" height="253" key="GridCell.Tab.1.left" timestamp="1580856784715">
+    <state width="1236" height="253" key="GridCell.Tab.1.center/0.0.1280.720@0.0.1280.720" timestamp="1580914036654" />
+    <state width="1236" height="253" key="GridCell.Tab.1.left" timestamp="1580914036654">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1236" height="253" key="GridCell.Tab.1.left/0.0.1280.720@0.0.1280.720" timestamp="1580856784715" />
-    <state width="1236" height="253" key="GridCell.Tab.1.right" timestamp="1580856784715">
+    <state width="1236" height="253" key="GridCell.Tab.1.left/0.0.1280.720@0.0.1280.720" timestamp="1580914036654" />
+    <state width="1236" height="253" key="GridCell.Tab.1.right" timestamp="1580914036654">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1236" height="253" key="GridCell.Tab.1.right/0.0.1280.720@0.0.1280.720" timestamp="1580856784715" />
+    <state width="1236" height="253" key="GridCell.Tab.1.right/0.0.1280.720@0.0.1280.720" timestamp="1580914036654" />
     <state x="232" y="85" key="Vcs.Push.Dialog.v2" timestamp="1580522292927">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
@@ -477,10 +491,10 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="327" y="97" key="VcsDiffUtil.ChangesDialog/0.0.1280.720@0.0.1280.720" timestamp="1580512458526" />
-    <state x="348" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1580858115799">
+    <state x="348" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1580914068823">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="348" y="188" key="com.intellij.ide.util.TipDialog/0.0.1280.720@0.0.1280.720" timestamp="1580858115799" />
+    <state x="348" y="188" key="com.intellij.ide.util.TipDialog/0.0.1280.720@0.0.1280.720" timestamp="1580914068823" />
     <state x="451" y="279" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1580396079604">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
@@ -493,10 +507,10 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="508" y="248" key="save.project.as.template.dialog/0.0.1280.720@0.0.1280.720" timestamp="1580468991506" />
-    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup" timestamp="1580861098495">
+    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup" timestamp="1580909048928">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup/0.0.1280.720@0.0.1280.720" timestamp="1580861098495" />
+    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup/0.0.1280.720@0.0.1280.720" timestamp="1580909048928" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -517,15 +531,17 @@
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/FoxHoundUI.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="12" />
+          <url>file://$PROJECT_DIR$/src/main/java/FoxHoundIO.java</url>
+          <line>130</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Remote">
         <watch expression="players" language="JAVA" />
+        <watch expression="((WindowsPath) path).isEmpty()" language="JAVA" custom="sun.nio.fs.WindowsPath" />
+        <watch expression="path.toString().isEmpty()" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>

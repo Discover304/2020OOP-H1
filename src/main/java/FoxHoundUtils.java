@@ -44,13 +44,13 @@ public class FoxHoundUtils {
         else
             str[numPlayers-1] = Character.toString((char) (64+dim/2+1)) + dim;
 
-        //System.out.println(str[numPlayers-1]);//this is a test to see if fox is at the correct position
-        //String[] hello = {"B1","D1","D4","H1","C8"};//this is a test input
         return str;
     }
 
     //see if the entred movememtn is correct
     public static boolean isValidMove(int dim, String[] players, char figure, String origin, String destination){
+        /*todo if there are no way for Hound to move simply return players with no change
+        *  but I guess it is better to implement this before menuQury in gameLoop*/
         if (dim <= 0) throw new IllegalArgumentException("Negative dimension");
         //read the position variable from input
         int[] num = new int[2];

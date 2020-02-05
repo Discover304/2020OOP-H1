@@ -68,7 +68,6 @@ public class FoxHoundGame {
             }
             if (FoxHoundUtils.isHoundWin(players, dim)){
                 System.out.println("The Hounds wins!");
-                break;
             }
 
             //only require the commend line input as choice
@@ -94,18 +93,15 @@ public class FoxHoundGame {
                     break;
                 case FoxHoundUI.GAME_SAVE:
                     Path pathSave = FoxHoundUI.fileQuery(STDIN_SCAN);
-                    if (pathSave == null) break;
                     boolean isSuccessful = FoxHoundIO.saveGame(players,turn,pathSave);
                     if (isSuccessful){
-
                         turn = FoxHoundUtils.FOX_FIELD;
                         break;
                     }
-                    System.out.println("ERROR: Saving file failed.");
+                    System.out.println("Saving file failed. please try again");
                     break;
                 case FoxHoundUI.GAME_LOAD:
                     Path pathLoad = FoxHoundUI.fileQuery(STDIN_SCAN);
-                    if (pathLoad.equals(null)) break;
                     char temp = FoxHoundIO.loadGame(players,pathLoad);
                     if (temp == '#'){
                         break;
@@ -142,8 +138,17 @@ public class FoxHoundGame {
     public static void main(String[] args) throws Exception {
         //pass constant
         int dimension;
-        if (args == null) dimension = FoxHoundUtils.DEFAULT_DIM;
-        else dimension = Integer.parseInt(args[0]);
+        int temp;
+        try {
+            temp = Integer.parseInt(args[0]);
+            if (4<=temp && temp<=26) dimension = temp;
+            else throw new IllegalArgumentException();
+        }
+        catch (IllegalArgumentException e){
+            System.out.println("Wrong dimension");
+            dimension = FoxHoundUtils.DEFAULT_DIM;
+        }
+
 
         //initialise the positions of all players
         String[] players = FoxHoundUtils.initialisePositions(dimension);
