@@ -137,10 +137,10 @@ public class FoxHoundUI {
 
     // ask for next movement.
     public static String[] positionQuery(int dim, Scanner stdin){
-        boolean validity = false;
         String[] result = new String[2];
 
-        //check validity
+        //check validity todo move this to utils
+        boolean validity = false;
         while(!validity){
             //print menu
             System.out.print("Provide origin and destination coordinates.\n");
@@ -180,13 +180,10 @@ public class FoxHoundUI {
                 validity = true;
             }
 
-            try{
-                if (!validity) {
-                    throw new IllegalArgumentException();
-                }
-            }
-            catch (IllegalArgumentException e){
-                System.out.print("Please enter valid coordinate pair separated by space.");
+            //todo this can also contimue working
+            if (!validity) {
+                System.err.println("ERROR: Please enter valid coordinate pair separated by space. ");
+                System.out.print("\n");
             }
         }
         return result;
@@ -195,9 +192,10 @@ public class FoxHoundUI {
     //import saved status
     public static Path fileQuery(Scanner stdin) {
         System.out.print("Enter file path:\n");
+        Path path = null;
 
         //get the path
-        Path path = Paths.get(stdin.nextLine());
+        path = Paths.get(stdin.nextLine());
         return path;
     }
 }

@@ -51,7 +51,43 @@ public class FoxHoundUtils {
     public static boolean isValidMove(int dim, String[] players, char figure, String origin, String destination){
         /*todo if there are no way for Hound to move simply return players with no change
         *  but I guess it is better to implement this before menuQury in gameLoop*/
+        //see if the input position is valid or not
+        boolean validity = false;
+        char[][] chars = new char[2][];
+        chars[0] = origin.toUpperCase().toCharArray();
+        chars[1] = destination.toUpperCase().toCharArray();
+        breakpoint:
+        for (char[] x: chars){
+            if (Character.isLetter(x[0])){
+                if (dim>9){
+                    if (x.length==3&&Character.isDigit(x[1])&&Character.isDigit(x[2]));
+                    else if (x.length==2&&Character.isDigit(x[1]));
+                    else {
+                        validity = false;
+                        break breakpoint;
+                    }
+                }
+                else if (dim<=9){
+                    if (x.length==2&&Character.isDigit(x[1]));
+                    else {
+                        validity = false;
+                        break breakpoint;
+                    }
+                }
+            }
+            else {
+                validity = false;
+                break breakpoint;
+            }
+            validity = true;
+        }
+        if (!validity) {
+            System.out.println("ERROR: Please enter valid coordinate pair separated by space.");
+        }
+
+        //test dimension
         if (dim <= 0) throw new IllegalArgumentException("Negative dimension");
+
         //read the position variable from input
         int[] num = new int[2];
         int[] letters = new int[2];
@@ -72,11 +108,6 @@ public class FoxHoundUtils {
                 case 'H':{
                     for (int i = 0; i<players.length-2;i++){
                         if (players[i].equals(origin)) {
-                            break breakpoint;
-                        }
-                    }
-                    for (String i : players){
-                        if (i.equals(origin)) {
                             break breakpoint;
                         }
                     }

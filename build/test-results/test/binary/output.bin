@@ -1,16 +1,7 @@
-file is not exists
-file is not exists
-no path given
-file is not exists
-file is not exists
-file is not exists
-file is not exists
-file is not exists
-file is not exists
-file is not exists
-dimension is not default
 saving process has some error
-	path is empty
 ,Provide origin and destination coordinates.
 #Enter two positions between A1-H8:
 Enter file path:
+?ERROR: Please enter valid coordinate pair separated by space.
+?ERROR: Please enter valid coordinate pair separated by space.
+?ERROR: Please enter valid coordinate pair separated by space.

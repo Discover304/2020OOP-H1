@@ -1,7 +1,6 @@
 import java.io.FileWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Scanner;
 
 /**
@@ -13,36 +12,18 @@ import java.util.Scanner;
 public class FoxHoundIO {
     public static boolean saveGame(String[] players, char turn, Path pathSave){
         //basic test
-        //is the path good
-        try{
-            if(pathSave == null)
-                throw new NullPointerException();
-        }
-        catch (Exception e){
-            System.out.println("no path given");
-            return false;
-        }
-
-        //is path not exits
-        try{
-            if (Files.exists(pathSave))
-                throw new IllegalArgumentException();
-        }
-        catch (Exception e){
-            System.out.println("file exists is wrong");
-            return false;
-        }
-
         //is the dimension equals to default
         //todo may conflict with ADVANCED part
-        try {
-            if(players.length != FoxHoundUtils.initialisePositions(FoxHoundUtils.DEFAULT_DIM).length)
-                throw new IllegalArgumentException();
-        }
-        catch (IllegalArgumentException e){
-            System.out.println("dimension is not default");
-            return false;
-        }
+        if(players.length != FoxHoundUtils.initialisePositions(FoxHoundUtils.DEFAULT_DIM).length)
+            throw new IllegalArgumentException("dimension is not match");
+
+        //is the path good
+        if(pathSave == null)
+            throw new NullPointerException("no path given");
+
+        //is path not exits
+        if (pathSave.toFile().exists())
+            throw new NullPointerException("file exists is not exists");
 
         //save part
         //start to write file
@@ -62,48 +43,16 @@ public class FoxHoundIO {
 
     public static char loadGame(String[] players, Path pathLoad){
         //test part
+        //testing things are at there initial position, for default dimension todo extend to all dimension
+        if(players.length != FoxHoundUtils.initialisePositions(FoxHoundUtils.DEFAULT_DIM).length)
+            throw new IllegalArgumentException("dimension is not match");
+
         //if path good
-        try{
-          if (pathLoad.toString().isEmpty()) {
-              throw new NullPointerException();
-          }
-        }
-        catch (NullPointerException e){
-            System.out.println("path is empty");
-            return '#';
-        }
+        if (pathLoad==null)
+            throw new NullPointerException("path is empty");
 
         //is path exists
-        try{
-            if (!Files.exists(pathLoad))
-                throw new IllegalArgumentException();;
-        }
-        catch (Exception e){
-            System.out.println("file is not exists");
-            return '#';
-        }
-
-        //testing things are at there initial position, for default dimension todo extend to all dimension
-        try{
-            if(players.length != FoxHoundUtils.initialisePositions(FoxHoundUtils.DEFAULT_DIM).length)
-                throw new IllegalArgumentException();
-        }
-        catch (IllegalArgumentException e){
-            System.out.println("dimension is not match");
-            return '#';
-        }
-
-        //is modified board
-        label:
-        for (int i = 0;i<players.length-1;i++) {
-            for (int j = 0;j<players.length-1;j++) {
-                if (players[j].equals(FoxHoundUtils.initialisePositions(FoxHoundUtils.DEFAULT_DIM)[j])){
-                    continue label;
-                }
-            }
-            return '#';
-        }
-        if (!players[players.length-1].equals(FoxHoundUtils.initialisePositions(FoxHoundUtils.DEFAULT_DIM)[players.length-1]))
+        if (!pathLoad.toFile().exists())
             return '#';
 
         //loading part
