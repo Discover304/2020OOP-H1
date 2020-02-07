@@ -69,7 +69,20 @@ public class FoxHoundIO {
 
         //todo input is in correct format(need higher dimension)
         //input is in correct format
-        if (!(as[1] == ' ')){
+        try{
+            if (!(as[1] == ' ' && 64<as[2] && as[2]<81)){
+                return '#';
+            }
+            for (char a:as){
+                if (Character.isAlphabetic(a) && !(64<as[0] && as[0]<73)){
+                    return '#';
+                }
+                if (Character.isDigit(a) && !(48<a && a<FoxHoundUtils.DEFAULT_DIM+1+48)){
+                    return '#';
+                }
+            }
+        }
+        catch (Exception e){
             return '#';
         }
 
