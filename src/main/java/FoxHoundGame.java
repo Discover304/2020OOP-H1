@@ -47,7 +47,6 @@ public class FoxHoundGame {
      * @param players current position of all figures on the board in board coordinates
      */
     private static void gameLoop(int dim, String[] players) throws Exception {
-
         // start this game with Fox
         char turn = FoxHoundUtils.FOX_FIELD;
 
@@ -70,35 +69,40 @@ public class FoxHoundGame {
                 System.out.println("The Hounds wins!");
             }
 
+            //if All Hound reach the last line
+            for (int i = 0; i<players.length-2; i++){
+                if (players[i].toCharArray()[1] != dim) break;
+                turn = FoxHoundUtils.FOX_FIELD;
+                break;
+            }
+
             //only require the commend line input as choice
             int choice = FoxHoundUI.mainMenuQuery(turn, STDIN_SCAN);
             
             // handle menu choices
             switch(choice) {
                 case FoxHoundUI.MENU_MOVE:
-                    while (true){
-                        String[] newPosition = FoxHoundUI.positionQuery(dim, STDIN_SCAN);
-                        if (FoxHoundUtils.isValidMove(dim, players, turn, newPosition[0], newPosition[1])){
-                            for (int i = 0; i<players.length; i++){
-                                if (players[i].equals(newPosition[0])){
-                                    players[i] = newPosition[1];
-                                    break;
-                                }
+                    //get the position
+                    String[] newPosition = FoxHoundUI.positionQuery(dim, STDIN_SCAN);
+                    //check if the movement is valid
+                    if (FoxHoundUtils.isValidMove(dim, players, turn, newPosition[0], newPosition[1])){
+                        //update values
+                        for (int i = 0; i<players.length; i++){
+                            if (players[i].equals(newPosition[0])){
+                                players[i] = newPosition[1];
+                                break;
                             }
-                            break;
                         }
-                        System.out.println("Invalid move. Try again!");
+                        turn = swapPlayers(turn);
+                        break;
                     }
-                    turn = swapPlayers(turn);
                     break;
                 case FoxHoundUI.GAME_SAVE:
                     Path pathSave = FoxHoundUI.fileQuery(STDIN_SCAN);
                     boolean isSuccessful = FoxHoundIO.saveGame(players,turn,pathSave);
                     if (isSuccessful){
-                        turn = FoxHoundUtils.FOX_FIELD;
-                        break;
+                        exit = true;
                     }
-                    System.out.println("Saving file failed. please try again");
                     break;
                 case FoxHoundUI.GAME_LOAD:
                     Path pathLoad = FoxHoundUI.fileQuery(STDIN_SCAN);
@@ -106,9 +110,10 @@ public class FoxHoundGame {
                     if (temp == '#'){
                         break;
                     }
+                    //for varying dimension
                     //if (players.length!=dim){
                     //    dim = (players.length-1)*2;
-                    //}//they are for varying dimension
+                    //}
                     turn = temp;
                     break;
                 case FoxHoundUI.MENU_EXIT:
@@ -139,16 +144,23 @@ public class FoxHoundGame {
         //pass constant
         int dimension;
         int temp;
+
+        //see if args has value
         try {
-            temp = Integer.parseInt(args[0]);
-            if (4<=temp && temp<=26) dimension = temp;
-            else throw new IllegalArgumentException();
+            //see if value entred is valid
+            try {
+                temp = Integer.parseInt(args[0]);
+                if (4<=temp && temp<=26) dimension = temp;
+                else throw new IllegalArgumentException();
+            }
+            catch (IllegalArgumentException e){
+                System.out.println("Wrong dimension");
+                dimension = FoxHoundUtils.DEFAULT_DIM;
+            }
         }
-        catch (IllegalArgumentException e){
-            System.out.println("Wrong dimension");
+        catch (Exception e){
             dimension = FoxHoundUtils.DEFAULT_DIM;
         }
-
 
         //initialise the positions of all players
         String[] players = FoxHoundUtils.initialisePositions(dimension);

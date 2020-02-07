@@ -139,7 +139,7 @@ public class FoxHoundUI {
     public static String[] positionQuery(int dim, Scanner stdin){
         String[] result = new String[2];
 
-        //check validity todo move this to utils
+        //check validity
         boolean validity = false;
         while(!validity){
             //print menu
@@ -180,7 +180,6 @@ public class FoxHoundUI {
                 validity = true;
             }
 
-            //todo this can also contimue working
             if (!validity) {
                 System.err.println("ERROR: Please enter valid coordinate pair separated by space. ");
                 System.out.print("\n");

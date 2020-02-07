@@ -38,21 +38,21 @@ public class FoxHoundIOBasicTest {
 
     @Test
     public void testLoadGameValidInput() {
-        Path input = Paths.get("D:\\Users\\Hobart\\Documents\\A_Study\\2_OOP\\Assignment\\inf1b-cw1\\data\\game01.txt");
+        Path input = Paths.get("game01.txt");
         String[] expectedPlayers = {"C2", "D1", "F1", "H1", "D7"};
         char expectedFigure = FoxHoundUtils.FOX_FIELD;
 
         checkLoadedData(input, expectedPlayers, expectedFigure);
 
 
-        input = Paths.get("D:\\Users\\Hobart\\Documents\\A_Study\\2_OOP\\Assignment\\inf1b-cw1\\data\\game02.txt");
+        input = Paths.get("game02.txt");
         expectedPlayers = new String[]{"B3", "E4", "C6", "E6", "D5"};
         expectedFigure = FoxHoundUtils.HOUND_FIELD;
 
         checkLoadedData(input, expectedPlayers, expectedFigure);
 
 
-        input = Paths.get("D:\\Users\\Hobart\\Documents\\A_Study\\2_OOP\\Assignment\\inf1b-cw1\\data\\game03.txt");
+        input = Paths.get("game03.txt");
         expectedPlayers = new String[]{"B3", "D3", "F1", "H3", "A2"};
         expectedFigure = FoxHoundUtils.FOX_FIELD;
 

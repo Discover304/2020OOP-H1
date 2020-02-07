@@ -36,7 +36,7 @@ public class FoxHoundIO {
             return true;
         }
         catch (Exception e) {
-            System.out.println("saving process has some error");
+            System.out.println("Saving file failed, please try again");
             return false;
         }
     }
@@ -66,6 +66,12 @@ public class FoxHoundIO {
         }
         char[] as = scan.nextLine().toCharArray();
         scan.close();
+
+        //todo input is in correct format(need higher dimension)
+        //input is in correct format
+        if (!(as[1] == ' ')){
+            return '#';
+        }
 
         //pass values
         String[] str = new String[(as.length-2+1)/3+1];

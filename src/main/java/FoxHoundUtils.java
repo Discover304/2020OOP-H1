@@ -49,42 +49,6 @@ public class FoxHoundUtils {
 
     //see if the entred movememtn is correct
     public static boolean isValidMove(int dim, String[] players, char figure, String origin, String destination){
-        /*todo if there are no way for Hound to move simply return players with no change
-        *  but I guess it is better to implement this before menuQury in gameLoop*/
-        //see if the input position is valid or not
-        boolean validity = false;
-        char[][] chars = new char[2][];
-        chars[0] = origin.toUpperCase().toCharArray();
-        chars[1] = destination.toUpperCase().toCharArray();
-        breakpoint:
-        for (char[] x: chars){
-            if (Character.isLetter(x[0])){
-                if (dim>9){
-                    if (x.length==3&&Character.isDigit(x[1])&&Character.isDigit(x[2]));
-                    else if (x.length==2&&Character.isDigit(x[1]));
-                    else {
-                        validity = false;
-                        break breakpoint;
-                    }
-                }
-                else if (dim<=9){
-                    if (x.length==2&&Character.isDigit(x[1]));
-                    else {
-                        validity = false;
-                        break breakpoint;
-                    }
-                }
-            }
-            else {
-                validity = false;
-                break breakpoint;
-            }
-            validity = true;
-        }
-        if (!validity) {
-            System.out.println("ERROR: Please enter valid coordinate pair separated by space.");
-        }
-
         //test dimension
         if (dim <= 0) throw new IllegalArgumentException("Negative dimension");
 
@@ -161,6 +125,9 @@ public class FoxHoundUtils {
             }
 
             break;//while
+        }
+        if (!result){
+            System.err.println("ERROR: Invalid move. Try again!");
         }
         return result;
     }
