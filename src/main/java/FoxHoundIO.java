@@ -13,7 +13,6 @@ public class FoxHoundIO {
     public static boolean saveGame(String[] players, char turn, Path pathSave){
         //basic test
         //is the dimension equals to default
-        //todo may conflict with ADVANCED part
         if(players.length != FoxHoundUtils.initialisePositions(FoxHoundUtils.DEFAULT_DIM).length)
             throw new IllegalArgumentException("dimension is not match");
 
@@ -43,7 +42,7 @@ public class FoxHoundIO {
 
     public static char loadGame(String[] players, Path pathLoad){
         //test part
-        //testing things are at there initial position, for default dimension todo extend to all dimension
+        //testing things are at there initial position, for default dimension
         if(players.length != FoxHoundUtils.initialisePositions(FoxHoundUtils.DEFAULT_DIM).length)
             throw new IllegalArgumentException("dimension is not match");
 
@@ -121,7 +120,7 @@ public class FoxHoundIO {
             tempPlayers[i-1] = scannedText[i];
         }
 
-        //get dimension
+        //todo get dimension
         //int dim = dimOfLoadedGame(tempPlayers, turn);
 
         //update board
