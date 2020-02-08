@@ -137,12 +137,15 @@ public class FoxHoundUtils {
         //origin position get
         int[] result = new int[2];
         char[] bs = str.toCharArray();
-        result[0] = bs[0] - 64;
-        //handling with 2 digit bumbers
+        result[0] = bs[0]-'A'+1;//index start from 1
+        //handling with 2 digit numbers
         String stringNum = Character.toString(bs[1]);
         if (bs.length == 3){
             stringNum += Character.toString(bs[2]);
             //System.out.println(as[2]);//testing if as[2] exist
+        }
+        if (bs.length>3){
+            throw new IllegalArgumentException("wrong input player coordinate");
         }
         result[1] = Integer.parseInt(stringNum);
         return result;

@@ -57,49 +57,83 @@ public class FoxHoundIO {
 
         //loading part
         //take the value from txt
-        Scanner scan;
+        String[] scannedText;
         try {
-            scan = new Scanner(pathLoad);
+            Scanner testScanning = new Scanner(pathLoad);
+            testScanning.nextLine();
+            if (testScanning.hasNextLine()) return '#';
+            testScanning.close();
+            Scanner scan = new Scanner(pathLoad);
+            String[] temp = new String[26];//number of players would not larger than this value
+            int count = 0;
+            for (int i = 0; scan.hasNext(); i++){
+                temp[i] = scan.next();
+                count+=1;
+            }
+            //pass value
+            scannedText = new String[count];
+            for (int i = 0; i<count; i++){
+                scannedText[i] = temp[i];
+            }
+            scan.close();
         } catch (Exception e) {
             System.out.println("loading process has some error");
             return '#';
         }
-        char[] as = scan.nextLine().toCharArray();
-        scan.close();
 
-        //todo input is in correct format(need higher dimension)
-        //input is in correct format
-        try{
-            if (!(as[1] == ' ' && 64<as[2] && as[2]<81)){
-                return '#';
-            }
-            for (char a:as){
-                if (Character.isAlphabetic(a) && !(64<as[0] && as[0]<73)){
-                    return '#';
-                }
-                if (Character.isDigit(a) && !(48<a && a<FoxHoundUtils.DEFAULT_DIM+1+48)){
-                    return '#';
-                }
-            }
-        }
-        catch (Exception e){
+        //test if teh list is empty or not
+        if (scannedText.length==0) {
             return '#';
         }
 
-        //pass values
-        String[] str = new String[(as.length-2+1)/3+1];
-        str[0]=Character.toString(as[0]);
-        for (int i = 2; i<as.length; i+=3){
-            str[(i+1)/3]=""+as[i]+as[i+1];
+        //test input is legal
+        if (!(scannedText[0].equals("F") || scannedText[0].equals("H"))){
+            return '#';
         }
+
+        //give turn
+        char turn = scannedText[0].charAt(0);
+
+        //test the format of the given things
+        for (int i = 1; i<scannedText.length;i++){//start forom 1 is because the first one is turn
+            try{
+                int[] coordinate = FoxHoundUtils.read(scannedText[i]);
+                for (int j:coordinate){
+                    if (!(j>=1 && j<=FoxHoundUtils.DEFAULT_DIM))
+                        return '#';//this may need to change to dim
+                }
+                //test that the coordinate given is valid
+                if (((coordinate[0]+coordinate[1])-1)%2==1)
+                    return '#';//the total length in a taxi-cub coordinate
+
+                char[] bs = scannedText[i].toCharArray();
+                if (!Character.isAlphabetic(bs[0]))
+                    return '#';
+            }
+            catch (Exception e){
+                return '#';
+            }
+        }
+
+        //waiting for test
+        String[] tempPlayers = new String[scannedText.length-1];
+        for (int i = 1; i<scannedText.length; i++){
+            tempPlayers[i-1] = scannedText[i];
+        }
+
+        //get dimension
+        //int dim = dimOfLoadedGame(tempPlayers, turn);
 
         //update board
-        for (int i = 1; i<str.length; i++){
-            players[i-1] = str[i];
-            //System.out.print(players[i-1]+"\n");//players[i-1] do changed
+        for (int i = 0; i<tempPlayers.length; i++){
+            players[i] = tempPlayers[i];
         }
-        char turn = str[0].toCharArray()[0];
 
         return turn;
+    }
+
+    public static int dimOfLoadedGame(String[] players, char turn){
+        //todo this should be a mathematic question
+        return FoxHoundUtils.DEFAULT_DIM;
     }
 }

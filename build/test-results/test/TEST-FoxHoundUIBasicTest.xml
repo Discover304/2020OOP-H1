@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="FoxHoundUIBasicTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2020-02-07T17:18:33" hostname="gaul.inf.ed.ac.uk" time="0.011">
+<testsuite name="FoxHoundUIBasicTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2020-02-08T18:43:49" hostname="saracen.inf.ed.ac.uk" time="0.021">
   <properties/>
-  <testcase name="testDisplayBoard" classname="FoxHoundUIBasicTest" time="0.001"/>
-  <testcase name="testPositionQueryMessage" classname="FoxHoundUIBasicTest" time="0.0"/>
-  <testcase name="testPositionQueryError" classname="FoxHoundUIBasicTest" time="0.001"/>
+  <testcase name="testDisplayBoard" classname="FoxHoundUIBasicTest" time="0.004"/>
+  <testcase name="testPositionQueryMessage" classname="FoxHoundUIBasicTest" time="0.007"/>
+  <testcase name="testPositionQueryError" classname="FoxHoundUIBasicTest" time="0.002"/>
   <testcase name="testPositionQueryReturn" classname="FoxHoundUIBasicTest" time="0.006"/>
-  <testcase name="testFileQueryReturn" classname="FoxHoundUIBasicTest" time="0.0"/>
-  <testcase name="testFileQueryMessage" classname="FoxHoundUIBasicTest" time="0.001"/>
+  <testcase name="testFileQueryReturn" classname="FoxHoundUIBasicTest" time="0.002"/>
+  <testcase name="testFileQueryMessage" classname="FoxHoundUIBasicTest" time="0.0"/>
   <system-out><![CDATA[Provide origin and destination coordinates.
 Enter two positions between A1-H8:
 Enter file path:
