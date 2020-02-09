@@ -99,14 +99,30 @@ public class FoxHoundGame {
                     break;
                 case FoxHoundUI.GAME_SAVE:
                     Path pathSave = FoxHoundUI.fileQuery(STDIN_SCAN);
-                    boolean isSuccessful = FoxHoundIO.saveGame(players,turn,pathSave);
+                    boolean isSuccessful = false;
+                    if (dim == FoxHoundUtils.DEFAULT_DIM){
+                         isSuccessful = FoxHoundIO.saveGame(players,turn,pathSave);
+                    }
+                    else {
+                        isSuccessful = FoxHoundIO.saveGameDim(players,turn,pathSave);
+                    }
                     if (isSuccessful){
                         exit = true;
                     }
                     break;
                 case FoxHoundUI.GAME_LOAD:
                     Path pathLoad = FoxHoundUI.fileQuery(STDIN_SCAN);
-                    char temp = FoxHoundIO.loadGame(players,pathLoad);
+                    char temp = '#';
+                    if (dim == FoxHoundUtils.DEFAULT_DIM){
+                        temp = FoxHoundIO.loadGame(players,pathLoad);
+                    }
+                    else{
+                        temp = FoxHoundIO.loadGameDim(players,pathLoad);
+                        if (temp == '#'){
+                            break;
+                        }
+                        dim = FoxHoundIO.dimGet(players,temp);
+                    }
                     if (temp == '#'){
                         break;
                     }
@@ -148,13 +164,9 @@ public class FoxHoundGame {
         //see if args has value
         try {
             //see if value entred is valid
-            try {
-                temp = Integer.parseInt(args[0]);
-                if (4<=temp && temp<=26) dimension = temp;
-                else throw new IllegalArgumentException();
-            }
-            catch (IllegalArgumentException e){
-                System.out.println("Wrong dimension");
+            temp = Integer.parseInt(args[0]);
+            if (4<=temp && temp<=26) dimension = temp;
+            else {
                 dimension = FoxHoundUtils.DEFAULT_DIM;
             }
         }

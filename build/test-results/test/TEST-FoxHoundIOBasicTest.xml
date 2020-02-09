@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="FoxHoundIOBasicTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2020-02-09T00:12:53" hostname="DESKTOP-6FO5S7R" time="0.097">
+<testsuite name="FoxHoundIOBasicTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2020-02-09T01:16:53" hostname="DESKTOP-6FO5S7R" time="0.057">
   <properties/>
-  <testcase name="testLoadGameInvalidFile" classname="FoxHoundIOBasicTest" time="0.007"/>
-  <testcase name="testLoadGameValidInput" classname="FoxHoundIOBasicTest" time="0.02"/>
+  <testcase name="testLoadGameInvalidFile" classname="FoxHoundIOBasicTest" time="0.005"/>
+  <testcase name="testLoadGameValidInput" classname="FoxHoundIOBasicTest" time="0.014"/>
   <testcase name="testSaveGamePathNull" classname="FoxHoundIOBasicTest" time="0.001"/>
   <testcase name="testLoadGamePlayersNonDefaultDim" classname="FoxHoundIOBasicTest" time="0.0"/>
-  <testcase name="testLoadGameInvalidFileContent" classname="FoxHoundIOBasicTest" time="0.032"/>
-  <testcase name="testSaveGamePlayersNonDefaultDim" classname="FoxHoundIOBasicTest" time="0.007"/>
-  <testcase name="testSaveGameInvalidPath" classname="FoxHoundIOBasicTest" time="0.011"/>
+  <testcase name="testLoadGameInvalidFileContent" classname="FoxHoundIOBasicTest" time="0.01"/>
+  <testcase name="testSaveGamePlayersNonDefaultDim" classname="FoxHoundIOBasicTest" time="0.005"/>
+  <testcase name="testSaveGameInvalidPath" classname="FoxHoundIOBasicTest" time="0.005"/>
   <testcase name="testLoadGamePathNull" classname="FoxHoundIOBasicTest" time="0.0"/>
   <testcase name="testSaveGameValidInput" classname="FoxHoundIOBasicTest" time="0.013"/>
   <system-out><![CDATA[Saving file failed, please try again

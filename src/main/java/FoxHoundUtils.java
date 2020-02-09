@@ -48,6 +48,7 @@ public class FoxHoundUtils {
     }
 
     //see if the entred movememtn is correct
+    //todo make something like a2 b1 be ok for higher dim (A02 B01) cannot handle the dim larger than 10
     public static boolean isValidMove(int dim, String[] players, char figure, String origin, String destination){
         //test dimension
         if (dim <= 0) throw new IllegalArgumentException("Negative dimension");

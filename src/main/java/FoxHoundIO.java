@@ -125,4 +125,19 @@ public class FoxHoundIO {
 
         return turn;
     }
+
+    //todo this is saving for different dim
+    public static boolean saveGameDim(String[] players, char turn, Path pathSave) {
+        return false;
+    }
+
+    //todo this is the condition that loading game with a different dimension
+    public static char loadGameDim(String[] players, Path pathLoad) {
+        return '#';
+    }
+
+    //todo this is the function determine the loaded game dimension
+    public static int dimGet(String[] players, char temp) {
+        return 8;
+    }
 }
