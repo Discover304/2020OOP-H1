@@ -2,8 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ad4b4c9-dce4-418b-968b-2ece5721f6c5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/FoxHoundIO.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/FoxHoundIO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/FoxHoundIOBasicTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/FoxHoundIOBasicTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/FoxHoundUIBasicTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/FoxHoundUIBasicTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/FoxHoundUtilsBasicTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/FoxHoundUtilsBasicTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/default-package.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/default-package.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-FoxHoundIOBasicTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-FoxHoundIOBasicTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-FoxHoundUIBasicTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-FoxHoundUIBasicTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-FoxHoundUtilsBasicTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-FoxHoundUtilsBasicTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/FoxHoundIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FoxHoundIO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/FoxHoundIOBasicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FoxHoundIOBasicTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,18 +128,6 @@
       <recent name="D:\Users\Hobart\Documents\A_Study\2_OOP\Assignment\inf1b-cw1\src\test\resources" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager" selected="Gradle.inf1b-cw1 [test]">
     <configuration name="FoxHoundGame" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="FoxHoundGame" />
@@ -206,6 +216,18 @@
         <item itemvalue="Gradle.FoxHoundUIBasicTest" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -467,29 +489,29 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="420" y="118" key="FileChooserDialogImpl/0.0.1280.720@0.0.1280.720" timestamp="1580720972498" />
-    <state width="1492" height="236" key="GridCell.Tab.0.bottom" timestamp="1581020101743">
+    <state width="1492" height="236" key="GridCell.Tab.0.bottom" timestamp="1581207171946">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1236" height="227" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1580914036660" />
-    <state width="1492" height="236" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1581020101743" />
+    <state width="1492" height="236" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1581207171946" />
     <state width="1492" height="400" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1580992201420" />
-    <state width="1492" height="236" key="GridCell.Tab.0.center" timestamp="1581020101743">
+    <state width="1492" height="236" key="GridCell.Tab.0.center" timestamp="1581207171946">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1236" height="227" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1580914036660" />
-    <state width="1492" height="236" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1581020101743" />
+    <state width="1492" height="236" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1581207171946" />
     <state width="1492" height="400" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1580992201420" />
-    <state width="1492" height="236" key="GridCell.Tab.0.left" timestamp="1581020101743">
+    <state width="1492" height="236" key="GridCell.Tab.0.left" timestamp="1581207171946">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1236" height="227" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1580914036660" />
-    <state width="1492" height="236" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1581020101743" />
+    <state width="1492" height="236" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1581207171946" />
     <state width="1492" height="400" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1580992201420" />
-    <state width="1492" height="236" key="GridCell.Tab.0.right" timestamp="1581020101743">
+    <state width="1492" height="236" key="GridCell.Tab.0.right" timestamp="1581207171946">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1236" height="227" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1580914036660" />
-    <state width="1492" height="236" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1581020101743" />
+    <state width="1492" height="236" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1581207171946" />
     <state width="1492" height="400" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1580992201420" />
     <state width="1492" height="262" key="GridCell.Tab.1.bottom" timestamp="1581009559144">
       <screen x="0" y="0" width="1536" height="824" />
@@ -553,50 +575,6 @@
     <state x="364" y="47" width="807" height="776" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1580997055387" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/FoxHoundIO.java</url>
-          <line>101</line>
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/FoxHoundIO.java</url>
-          <line>105</line>
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/FoxHoundIO.java</url>
-          <line>109</line>
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/FoxHoundIO.java</url>
-          <line>112</line>
-          <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/FoxHoundIO.java</url>
-          <line>89</line>
-          <option name="timeStamp" value="49" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/FoxHoundIO.java</url>
-          <line>84</line>
-          <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/FoxHoundIO.java</url>
-          <line>79</line>
-          <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/FoxHoundIO.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Remote">
         <watch expression="!Character.isAlphabetic(bs[0])" language="JAVA" />
