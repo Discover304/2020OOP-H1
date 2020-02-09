@@ -154,7 +154,6 @@ public class FoxHoundUI {
             char[][] chars = new char[2][];
             chars[0] = result[0].toUpperCase().toCharArray();
             chars[1] = result[1].toUpperCase().toCharArray();
-            breakpoint:
             for (char[] x: chars){
                 if (Character.isLetter(x[0])){
                     if (dim>9){
@@ -162,20 +161,20 @@ public class FoxHoundUI {
                         else if (x.length==2&&Character.isDigit(x[1]));
                         else {
                             validity = false;
-                            break breakpoint;
+                            break;
                         }
                     }
                     else if (dim<=9){
                         if (x.length==2&&Character.isDigit(x[1]));
                         else {
                             validity = false;
-                            break breakpoint;
+                            break;
                         }
                     }
                 }
                 else {
                     validity = false;
-                    break breakpoint;
+                    break;
                 }
                 validity = true;
             }
