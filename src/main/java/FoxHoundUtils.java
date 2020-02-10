@@ -1,9 +1,3 @@
-import javax.swing.plaf.metal.MetalBorders;
-import java.util.Arrays;
-import java.util.Scanner;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.logging.ErrorManager;
-
 /**
  * A utility class for the fox hound program.
  * 
@@ -48,7 +42,6 @@ public class FoxHoundUtils {
     }
 
     //see if the entred movememtn is correct
-    //todo make something like a2 b1 be ok for higher dim (A02 B01) cannot handle the dim larger than 10
     public static boolean isValidMove(int dim, String[] players, char figure, String origin, String destination){
         //test dimension
         if (dim <= 0) throw new IllegalArgumentException("Negative dimension");
@@ -66,21 +59,24 @@ public class FoxHoundUtils {
         //this is the main part to see validity
         boolean result = true;
         //useing while is because any of the following false the result is false
+        //this is an optimisation
         while(true){
             //correct origin compare players and figure and origin
-            breakpoint:
             switch (figure){
                 case 'H':{
-                    for (int i = 0; i<players.length-2;i++){
-                        if (players[i].equals(origin)) {
-                            break breakpoint;
+                    for (int i = 0; i<players.length-1;i++){
+                        if (read(players[i])[0] == letters[0] && read(players[i])[1] == num[0]) {
+                            result = true;
+                            break;
+                        }
+                        else {
+                            result = false;
                         }
                     }
-                    result = false;
                     break;//breakpoint
                 }
                 case 'F':{
-                    if (players[players.length-1].equals(origin)) {
+                    if (read(players[players.length-1])[0] == letters[0] && read(players[players.length-1])[1] == num[0]) {
                         break;//breakpoint
                     }
                     result = false;
@@ -103,7 +99,7 @@ public class FoxHoundUtils {
 
             //correct destination, no player at destination
             for (String i:players){
-                if (i.equals(destination)){
+                if (read(i)[0] == letters[1] && read(i)[1] == num[1]){
                     result = false;
                     break;
                 }

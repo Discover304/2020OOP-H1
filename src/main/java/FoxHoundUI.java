@@ -28,19 +28,11 @@ public class FoxHoundUI {
     public static final int MENU_EXIT = 4;
 
     //print the board
-    //todo optional fancy print
-    public static <Char> void displayBoard(String[] players, int dim){
+    public static void displayBoard(String[] players, int dim){
         //get letter labels
-        if (dim<10) System.out.print("  ");
-        else System.out.print("   ");
-        char[] letters = new char[dim];
-        for(int i = 0; i<dim; i++){
-            letters[i] = (char) ('A'+i);
-            System.out.print(letters[i]);
-        }
-        if (dim<10) System.out.print("  ");
-        else System.out.print("   ");
-        System.out.print("\n");
+        pLetters(dim);
+
+        //print the blank line
         System.out.print("\n");
 
         //get number labels
@@ -75,18 +67,25 @@ public class FoxHoundUI {
             posi [temp[0]-1][temp[1]-1] = FoxHoundUtils.HOUND_FIELD;
         }
 
-        //print board+number labels
+        //print number labels + board + number labels
         for (int i = 0; i<dim; i++){
             System.out.print(numbers[i]+" ");
             for (int j = 0; j<dim; j++) System.out.print(posi[j][i]);
             System.out.print(" "+numbers[i]+"\n");
         }
 
-        //print letter labels
+        //print letter labels again
+        pLetters(dim);
+    }
+
+    //this is for display the letters line
+    private static void pLetters(int dim){
         System.out.print("\n");
         if (dim<10) System.out.print("  ");
         else System.out.print("   ");
+        char[] letters = new char[dim];
         for(int i = 0; i<dim; i++){
+            letters[i] = (char) ('A'+i);
             System.out.print(letters[i]);
         }
         if (dim<10) System.out.print("  ");
@@ -147,13 +146,13 @@ public class FoxHoundUI {
             System.out.print("Enter two positions between A1-H8:\n");
 
             //read input
-            result[0] = stdin.next();
-            result[1] = stdin.next();
+            result[0] = stdin.next().toUpperCase();
+            result[1] = stdin.next().toUpperCase();
 
             //this is the main part
             char[][] chars = new char[2][];
-            chars[0] = result[0].toUpperCase().toCharArray();
-            chars[1] = result[1].toUpperCase().toCharArray();
+            chars[0] = result[0].toCharArray();
+            chars[1] = result[1].toCharArray();
             for (char[] x: chars){
                 if (Character.isLetter(x[0])){
                     if (dim>9){

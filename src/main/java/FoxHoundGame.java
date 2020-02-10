@@ -1,4 +1,5 @@
 import java.nio.file.Path;
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -88,7 +89,8 @@ public class FoxHoundGame {
                     if (FoxHoundUtils.isValidMove(dim, players, turn, newPosition[0], newPosition[1])){
                         //update values
                         for (int i = 0; i<players.length; i++){
-                            if (players[i].equals(newPosition[0])){
+                            boolean finding = Arrays.equals(FoxHoundUtils.read(players[i]),FoxHoundUtils.read(newPosition[0]));
+                            if (finding){
                                 players[i] = newPosition[1];
                                 break;
                             }
