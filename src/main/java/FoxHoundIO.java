@@ -135,8 +135,50 @@ public class FoxHoundIO {
         return '#';
     }
 
-    //todo this is the function determine the loaded game dimension
-    public static int dimGet(String[] players, char temp) {
-        return 8;
+    //this is the function determine the loaded game dimension
+    public static int dimGet(String[] players, char turn) {
+        int[][] coordinates = new int[players.length][];
+
+        //read fox coordinate
+        coordinates[players.length-1] = FoxHoundUtils.read(players[players.length-1]);
+
+        //read Hound coodinate + find total move
+        int totalMove = 0;
+        for (int i = 0; i < players.length-1; i++){
+            coordinates[i] = FoxHoundUtils.read(players[i]);
+            totalMove+=coordinates[i][1];
+        }
+
+        //find the fox move
+        if(turn == FoxHoundUtils.HOUND_FIELD){
+            totalMove+=1;
+        }
+
+        //number of found determines the dimension
+        int[] tempDim = {(players.length-1)*2,(players.length-1)*2+1};
+
+        int dimension = 8;
+
+        //find which temp_dim is true
+        if (totalMove%2 == 0){
+            if (coordinates[coordinates.length-1][1]%2 == 0){
+                dimension = tempDim[0];
+            }
+            else dimension = tempDim[1];
+        }
+        else {
+            if (coordinates[coordinates.length-1][1]%2 == 1){
+                dimension = tempDim[0];
+            }
+            else dimension = tempDim[1];
+        }
+
+        //see if the fox have the correct move numbers
+        if (totalMove - coordinates[players.length-1][1] < 0){//this means the fox has move so many steps that exceed the total
+            System.err.println("impossible board coordinate");
+            return 8;
+        }
+
+        return dimension;
     }
 }

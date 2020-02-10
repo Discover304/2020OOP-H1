@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="FoxHoundIOBasicTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2020-02-10T21:03:38" hostname="DESKTOP-6FO5S7R" time="0.052">
+<testsuite name="FoxHoundIOBasicTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2020-02-10T22:38:19" hostname="DESKTOP-6FO5S7R" time="0.071">
   <properties/>
   <testcase name="testLoadGameInvalidFile" classname="FoxHoundIOBasicTest" time="0.005"/>
-  <testcase name="testLoadGameValidInput" classname="FoxHoundIOBasicTest" time="0.013"/>
+  <testcase name="testLoadGameValidInput" classname="FoxHoundIOBasicTest" time="0.023"/>
   <testcase name="testSaveGamePathNull" classname="FoxHoundIOBasicTest" time="0.001"/>
   <testcase name="testLoadGamePlayersNonDefaultDim" classname="FoxHoundIOBasicTest" time="0.001"/>
-  <testcase name="testLoadGameInvalidFileContent" classname="FoxHoundIOBasicTest" time="0.016"/>
+  <testcase name="testLoadGameInvalidFileContent" classname="FoxHoundIOBasicTest" time="0.019"/>
   <testcase name="testSaveGamePlayersNonDefaultDim" classname="FoxHoundIOBasicTest" time="0.004"/>
   <testcase name="testSaveGameInvalidPath" classname="FoxHoundIOBasicTest" time="0.004"/>
-  <testcase name="testLoadGamePathNull" classname="FoxHoundIOBasicTest" time="0.0"/>
-  <testcase name="testSaveGameValidInput" classname="FoxHoundIOBasicTest" time="0.006"/>
+  <testcase name="testLoadGamePathNull" classname="FoxHoundIOBasicTest" time="0.001"/>
+  <testcase name="differentDimmensionTest" classname="FoxHoundIOBasicTest" time="0.001"/>
+  <testcase name="testSaveGameValidInput" classname="FoxHoundIOBasicTest" time="0.008"/>
   <system-out><![CDATA[Saving file failed, please try again
 ]]></system-out>
-  <system-err><![CDATA[]]></system-err>
+  <system-err><![CDATA[impossible board coordinate
+]]></system-err>
 </testsuite>

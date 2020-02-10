@@ -172,4 +172,21 @@ public class FoxHoundIOBasicTest {
         Path saveFile = getTmpPath();
         FoxHoundIO.saveGame(players, nextMove, saveFile);
     }
+
+    @Test
+    public void differentDimmensionTest() {
+        String[] expectedPlayers = {"C2", "D1", "F1", "H1", "D7"};
+        char expectedFigure = FoxHoundUtils.FOX_FIELD;
+        assertEquals("cannot find the correct dim",8,FoxHoundIO.dimGet(expectedPlayers,expectedFigure));
+
+
+        expectedPlayers = new String[]{"B3", "E4", "C6", "E6", "D4"};
+        expectedFigure = FoxHoundUtils.HOUND_FIELD;
+        assertEquals("cannot find the correct dim",8,FoxHoundIO.dimGet(expectedPlayers,expectedFigure));
+
+
+        expectedPlayers = new String[]{"B3", "D3", "F1", "H3", "A2"};
+        expectedFigure = FoxHoundUtils.FOX_FIELD;
+        assertEquals("cannot find the correct dim",8,FoxHoundIO.dimGet(expectedPlayers,expectedFigure));
+    }
 }
