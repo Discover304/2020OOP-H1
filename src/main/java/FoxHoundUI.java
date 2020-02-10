@@ -143,7 +143,8 @@ public class FoxHoundUI {
         while(!validity){
             //print menu
             System.out.print("Provide origin and destination coordinates.\n");
-            System.out.print("Enter two positions between A1-H8:\n");
+            String largestRange = "A1" + "-" + (char) ('A'+dim-1) + dim;
+            System.out.print("Enter two positions between " + largestRange + ":\n");
 
             //read input
             result[0] = stdin.next().toUpperCase();
