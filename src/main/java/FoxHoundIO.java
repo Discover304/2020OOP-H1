@@ -9,12 +9,19 @@ import java.util.Scanner;
  * related operations such as saving and loading a game.
  */
 public class FoxHoundIO {
+
+    //save game with default dimension
     public static boolean saveGame(String[] players, char turn, Path pathSave){
         //basic test
         //is the dimension equals to default
         if(players.length != FoxHoundUtils.initialisePositions(FoxHoundUtils.DEFAULT_DIM).length)
             throw new IllegalArgumentException("dimension is not match");
 
+        return saveGameDim(players, turn, pathSave);
+    }
+
+    //this is saving for different dim
+    public static boolean saveGameDim(String[] players, char turn, Path pathSave) {
         //is the path good
         if(pathSave == null)
             throw new NullPointerException("no path given");
@@ -39,6 +46,7 @@ public class FoxHoundIO {
         }
     }
 
+    //onlyLoad the game with default dimension
     public static char loadGame(String[] players, Path pathLoad){
         //test part
         //testing things are at there initial position, for default dimension
@@ -74,9 +82,7 @@ public class FoxHoundIO {
 
             //pass value
             scannedText = new String[count];
-            for (int i = 0; i<count; i++){
-                scannedText[i] = temp[i];
-            }
+            System.arraycopy(temp, 0, scannedText, 0, count);
             scan.close();
 
             //test if the list is empty or not
@@ -118,21 +124,100 @@ public class FoxHoundIO {
         char turn = scannedText[0].charAt(0);
 
         //change values of players
-        for (int i = 1; i<scannedText.length; i++){
-            players[i-1] = scannedText[i];
-        }
+        System.arraycopy(scannedText, 1, players, 0, scannedText.length - 1);
 
         return turn;
     }
 
-    //todo this is saving for different dim
-    public static boolean saveGameDim(String[] players, char turn, Path pathSave) {
-        return false;
-    }
-
-    //todo this is the condition that loading game with a different dimension
+    //this is the condition that loading game with a different dimension
+    //if this is used the position where this is called need to add another function in order to update the dimension.
     public static char loadGameDim(String[] players, Path pathLoad) {
-        return '#';
+        //test part
+        //testing things are at there initial position, for default dimension
+        if(players.length != FoxHoundUtils.initialisePositions(dimGet(players,FoxHoundUtils.FOX_FIELD)).length)
+            throw new IllegalArgumentException("dimension is not match");
+
+        //if path good
+        if (pathLoad==null)
+            throw new NullPointerException("path is empty");
+
+        //loading part
+        //take the value from txt
+        String[] scannedText;
+        try {
+            //is path exists
+            if (!pathLoad.toFile().exists())
+                return '#';
+
+            //see if the second line has something
+            Scanner testScanning = new Scanner(pathLoad);
+            testScanning.nextLine();
+            if (testScanning.hasNextLine()) return '#';
+            testScanning.close();
+
+            //read the data
+            Scanner scan = new Scanner(pathLoad);
+            String[] temp = new String[26];//number of players would not larger than this value
+            int count = 0;
+            for (int i = 0; scan.hasNext(); i++){
+                temp[i] = scan.next();
+                count+=1;
+            }
+
+            //pass value
+            scannedText = new String[count];
+            System.arraycopy(temp, 0, scannedText, 0, count);
+            scan.close();
+
+            //test if the list is empty or not
+            if (scannedText.length==0) {
+                return '#';
+            }
+
+            //test input figure is legal
+            if (!(scannedText[0].equals("F") || scannedText[0].equals("H"))){
+                return '#';
+            }
+
+            //test the format of the loaded file
+            for (int i = 1; i<scannedText.length;i++) {//start forom 1 is because the first one is turn
+
+                //each coordinate has a letter axises
+                char[] bs = scannedText[i].toCharArray();
+                if (!Character.isAlphabetic(bs[0]))
+                    return '#';
+                int[] coordinate = FoxHoundUtils.read(scannedText[i]);
+
+                //see what is the dimension
+                String[] tempPlayers = new String[scannedText.length-1];
+                System.arraycopy(scannedText, 1, tempPlayers, 0, scannedText.length - 1);
+                int dim = dimGet(tempPlayers,scannedText[0].charAt(0));
+
+                //correct range of coordinate
+                for (int j : coordinate) {
+                    if (!(j >= 1 && j <= dim))//this may need to change to dim
+                        return '#';
+                }
+
+                //test that the coordinate given is valid in the board, which is black
+                if (((coordinate[0] + coordinate[1]) - 1) % 2 == 1)//the total length in a taxi-cub coordinate
+                    return '#';
+            }
+        }
+        catch (Exception e) {
+            System.out.println("loading process has some error");
+            return '#';
+        }
+
+        //give turn
+        char turn = scannedText[0].charAt(0);
+
+        players = new String[scannedText.length-1];
+
+        //change values of players
+        System.arraycopy(scannedText, 1, players, 0, scannedText.length - 1);
+
+        return turn;
     }
 
     //this is the function determine the loaded game dimension
@@ -157,7 +242,7 @@ public class FoxHoundIO {
         //number of found determines the dimension
         int[] tempDim = {(players.length-1)*2,(players.length-1)*2+1};
 
-        int dimension = 8;
+        int dimension;
 
         //find which temp_dim is true
         if (totalMove%2 == 0){

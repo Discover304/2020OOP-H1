@@ -47,7 +47,7 @@ public class FoxHoundGame {
      * @param dim the dimension of the game board
      * @param players current position of all figures on the board in board coordinates
      */
-    private static void gameLoop(int dim, String[] players) throws Exception {
+    private static void gameLoop(int dim, String[] players){
         // start this game with Fox
         char turn = FoxHoundUtils.FOX_FIELD;
 
@@ -71,10 +71,14 @@ public class FoxHoundGame {
             }
 
             //if All Hound reach the last line
-            for (int i = 0; i<players.length-2; i++){
-                if (players[i].toCharArray()[1] != dim) break;
-                turn = FoxHoundUtils.FOX_FIELD;
-                break;
+            if (turn == FoxHoundUtils.HOUND_FIELD){
+                for (int i = 0; i<players.length-2; i++){
+                    if (FoxHoundUtils.read(players[i])[1] == dim){
+                        turn = FoxHoundUtils.HOUND_FIELD;
+                        break;
+                    }
+                    turn = FoxHoundUtils.FOX_FIELD;
+                }
             }
 
             //only require the commend line input as choice
@@ -101,7 +105,7 @@ public class FoxHoundGame {
                     break;
                 case FoxHoundUI.GAME_SAVE:
                     Path pathSave = FoxHoundUI.fileQuery(STDIN_SCAN);
-                    boolean isSuccessful = false;
+                    boolean isSuccessful;
                     if (dim == FoxHoundUtils.DEFAULT_DIM){
                          isSuccessful = FoxHoundIO.saveGame(players,turn,pathSave);
                     }
@@ -114,7 +118,7 @@ public class FoxHoundGame {
                     break;
                 case FoxHoundUI.GAME_LOAD:
                     Path pathLoad = FoxHoundUI.fileQuery(STDIN_SCAN);
-                    char temp = '#';
+                    char temp;
                     if (dim == FoxHoundUtils.DEFAULT_DIM){
                         temp = FoxHoundIO.loadGame(players,pathLoad);
                     }
@@ -158,7 +162,7 @@ public class FoxHoundGame {
      * @param args contain the command line arguments where the first can be
      * board dimensions.
      */
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         //pass constant
         int dimension;
         int temp;

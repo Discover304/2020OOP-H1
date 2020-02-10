@@ -82,20 +82,22 @@ public class FoxHoundUtils {
                     result = false;
                 }
             }
-            if (result == false) break;//while
+            if (!result) break;//while
 
             //correct range of destination, take destination and dim
             for (int i:letters){
-                if (i > dim){
+                if (i > dim) {
                     result = false;
+                    break;
                 }
             }
             for (int i:num){
-                if (i > dim){
-                    result=false;
+                if (i > dim) {
+                    result = false;
+                    break;
                 }
             }
-            if (result == false) break;//while
+            if (!result) break;//while
 
             //correct destination, no player at destination
             for (String i:players){
@@ -104,7 +106,7 @@ public class FoxHoundUtils {
                     break;
                 }
             }
-            if (result == false) break;//while
+            if (!result) break;//while
 
             //correct move generate position function and see if the value of destination from origin of the figure is valid
             //origin position get

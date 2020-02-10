@@ -155,28 +155,17 @@ public class FoxHoundUI {
             chars[0] = result[0].toCharArray();
             chars[1] = result[1].toCharArray();
             for (char[] x: chars){
-                if (Character.isLetter(x[0])){
-                    if (dim>9){
-                        if (x.length==3&&Character.isDigit(x[1])&&Character.isDigit(x[2]));
-                        else if (x.length==2&&Character.isDigit(x[1]));
-                        else {
-                            validity = false;
-                            break;
-                        }
-                    }
-                    else if (dim<=9){
-                        if (x.length==2&&Character.isDigit(x[1]));
-                        else {
-                            validity = false;
-                            break;
-                        }
-                    }
-                }
-                else {
-                    validity = false;
+                if (!Character.isLetter(x[0])){
                     break;
                 }
-                validity = true;
+                else if (dim>9){
+                    validity = (x.length==2&&Character.isDigit(x[1]))||(x.length==3&&Character.isDigit(x[1])&&Character.isDigit(x[2]));
+                    break;
+                }
+                else {
+                    validity = x.length==2&&Character.isDigit(x[1]);
+                    break;
+                }
             }
 
             if (!validity) {
@@ -190,7 +179,7 @@ public class FoxHoundUI {
     //import saved status
     public static Path fileQuery(Scanner stdin) {
         System.out.print("Enter file path:\n");
-        Path path = null;
+        Path path;
 
         //get the path
         path = Paths.get(stdin.nextLine());
