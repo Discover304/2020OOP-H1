@@ -1,36 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8ad4b4c9-dce4-418b-968b-2ece5721f6c5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/jarAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+    <list default="true" id="8ad4b4c9-dce4-418b-968b-2ece5721f6c5" name="Default Changelist" comment="auto formated edition">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/FoxHoundGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/FoxHoundGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/FoxHoundIO.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/FoxHoundIO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/FoxHoundUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/FoxHoundUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/FoxHoundUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/FoxHoundUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/FoxHoundIOBasicTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/FoxHoundIOBasicTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/FoxHoundUIBasicTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/FoxHoundUIBasicTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/FoxHoundUtilsBasicTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/FoxHoundUtilsBasicTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/default-package.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/default-package.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-FoxHoundIOBasicTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-FoxHoundIOBasicTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-FoxHoundUIBasicTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-FoxHoundUIBasicTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-FoxHoundUtilsBasicTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-FoxHoundUtilsBasicTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FoxAI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FoxAI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/FoxHoundGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FoxHoundGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/FoxHoundIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FoxHoundIO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/FoxHoundUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FoxHoundUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/FoxHoundUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FoxHoundUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/HoundAI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HoundAI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/FoxHoundIOBasicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FoxHoundIOBasicTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/FoxHoundUIBasicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FoxHoundUIBasicTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/FoxHoundUtilsBasicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FoxHoundUtilsBasicTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -473,7 +455,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581374373574</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="0 bug 0 warning!">
+      <created>1581378028638</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1581378028638</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -503,7 +492,9 @@
     <MESSAGE value="delete all breakpoints" />
     <MESSAGE value="this is the version that fix all the bug for different dimension" />
     <MESSAGE value="position query update" />
-    <option name="LAST_COMMIT_MESSAGE" value="position query update" />
+    <MESSAGE value="0 bug 0 warning!" />
+    <MESSAGE value="auto formated edition" />
+    <option name="LAST_COMMIT_MESSAGE" value="auto formated edition" />
   </component>
   <component name="WindowStateProjectService">
     <state x="232" y="22" key="#Code_Folding" timestamp="1580457645223">
@@ -562,11 +553,11 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="395" y="69" key="#xdebugger.evaluate/0.0.1280.720@0.0.1280.720" timestamp="1580498314855" />
-    <state x="326" y="23" key="CommitChangelistDialog2" timestamp="1581374372074">
+    <state x="326" y="23" key="CommitChangelistDialog2" timestamp="1581427952623">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="198" y="0" key="CommitChangelistDialog2/0.0.1280.720@0.0.1280.720" timestamp="1580914126087" />
-    <state x="326" y="23" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1581374372074" />
+    <state x="326" y="23" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1581427952623" />
     <state x="5" y="59" key="DiffContextDialog" timestamp="1581207913963">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -576,53 +567,53 @@
     </state>
     <state x="420" y="118" key="FileChooserDialogImpl/0.0.1280.720@0.0.1280.720" timestamp="1580720972498" />
     <state x="504" y="135" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1581333039655" />
-    <state width="1492" height="232" key="GridCell.Tab.0.bottom" timestamp="1581377669244">
+    <state width="1492" height="298" key="GridCell.Tab.0.bottom" timestamp="1581378042336">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1236" height="227" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1580914036660" />
-    <state width="1492" height="232" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1581377669244" />
+    <state width="1492" height="298" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1581378042336" />
     <state width="1492" height="400" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1580992201420" />
-    <state width="1492" height="232" key="GridCell.Tab.0.center" timestamp="1581377669244">
+    <state width="1492" height="298" key="GridCell.Tab.0.center" timestamp="1581378042336">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1236" height="227" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1580914036660" />
-    <state width="1492" height="232" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1581377669244" />
+    <state width="1492" height="298" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1581378042336" />
     <state width="1492" height="400" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1580992201420" />
-    <state width="1492" height="232" key="GridCell.Tab.0.left" timestamp="1581377669244">
+    <state width="1492" height="298" key="GridCell.Tab.0.left" timestamp="1581378042336">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1236" height="227" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1580914036660" />
-    <state width="1492" height="232" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1581377669244" />
+    <state width="1492" height="298" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1581378042336" />
     <state width="1492" height="400" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1580992201420" />
-    <state width="1492" height="232" key="GridCell.Tab.0.right" timestamp="1581377669244">
+    <state width="1492" height="298" key="GridCell.Tab.0.right" timestamp="1581378042336">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1236" height="227" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1580914036660" />
-    <state width="1492" height="232" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1581377669244" />
+    <state width="1492" height="298" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1581378042336" />
     <state width="1492" height="400" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1580992201420" />
-    <state width="1492" height="298" key="GridCell.Tab.1.bottom" timestamp="1581374297778">
+    <state width="1492" height="298" key="GridCell.Tab.1.bottom" timestamp="1581378042336">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1236" height="253" key="GridCell.Tab.1.bottom/0.0.1280.720@0.0.1280.720" timestamp="1580914036654" />
-    <state width="1492" height="298" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1581374297778" />
+    <state width="1492" height="298" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1581378042336" />
     <state width="1492" height="341" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1580992013535" />
-    <state width="1492" height="298" key="GridCell.Tab.1.center" timestamp="1581374297778">
+    <state width="1492" height="298" key="GridCell.Tab.1.center" timestamp="1581378042336">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1236" height="253" key="GridCell.Tab.1.center/0.0.1280.720@0.0.1280.720" timestamp="1580914036654" />
-    <state width="1492" height="298" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1581374297778" />
+    <state width="1492" height="298" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1581378042336" />
     <state width="1492" height="341" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1580992013535" />
-    <state width="1492" height="298" key="GridCell.Tab.1.left" timestamp="1581374297778">
+    <state width="1492" height="298" key="GridCell.Tab.1.left" timestamp="1581378042336">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1236" height="253" key="GridCell.Tab.1.left/0.0.1280.720@0.0.1280.720" timestamp="1580914036654" />
-    <state width="1492" height="298" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1581374297778" />
+    <state width="1492" height="298" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1581378042336" />
     <state width="1492" height="341" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1580992013535" />
-    <state width="1492" height="298" key="GridCell.Tab.1.right" timestamp="1581374297778">
+    <state width="1492" height="298" key="GridCell.Tab.1.right" timestamp="1581378042336">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1236" height="253" key="GridCell.Tab.1.right/0.0.1280.720@0.0.1280.720" timestamp="1580914036654" />
-    <state width="1492" height="298" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1581374297778" />
+    <state width="1492" height="298" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1581378042336" />
     <state width="1492" height="341" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1580992013535" />
     <state x="441" y="127" key="RollbackChangesDialog" timestamp="1580996338135">
       <screen x="0" y="0" width="1536" height="824" />
@@ -632,21 +623,21 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="ShowDiffWithBranchDialog/0.0.1536.824@0.0.1536.824" timestamp="1581269880737" />
-    <state x="278" y="97" key="Vcs.Push.Dialog.v2" timestamp="1581374376529">
+    <state x="278" y="97" key="Vcs.Push.Dialog.v2" timestamp="1581378032894">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="232" y="85" key="Vcs.Push.Dialog.v2/0.0.1280.720@0.0.1280.720" timestamp="1580914164241" />
-    <state x="278" y="97" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1581374376529" />
+    <state x="278" y="97" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1581378032894" />
     <state x="327" y="97" key="VcsDiffUtil.ChangesDialog" timestamp="1580512458526">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="327" y="97" key="VcsDiffUtil.ChangesDialog/0.0.1280.720@0.0.1280.720" timestamp="1580512458526" />
-    <state x="462" y="203" width="741" height="330" key="com.intellij.ide.util.TipDialog" timestamp="1581361476271">
+    <state x="462" y="203" width="741" height="330" key="com.intellij.ide.util.TipDialog" timestamp="1581378834004">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="-1035" y="119" width="912" height="343" key="com.intellij.ide.util.TipDialog/0.0.1280.720/-720.-288.720.1280@-720.-288.720.1280" timestamp="1580923842075" />
     <state x="348" y="188" key="com.intellij.ide.util.TipDialog/0.0.1280.720@0.0.1280.720" timestamp="1580914068823" />
-    <state x="462" y="203" width="741" height="330" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1581361476271" />
+    <state x="462" y="203" width="741" height="330" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1581378834004" />
     <state x="541" y="319" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581207610228">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

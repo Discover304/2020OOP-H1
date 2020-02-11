@@ -1,48 +1,58 @@
 /**
  * A utility class for the fox hound program.
- * 
+ * <p>
  * It contains helper functions to check the state of the game
  * board and validate board coordinates and figure positions.
  */
 public class FoxHoundUtils {
 
-    /** Default dimension of the game board in case none is specified. */
+    /**
+     * Default dimension of the game board in case none is specified.
+     */
     public static final int DEFAULT_DIM = 8;
 
-    /** Minimum possible dimension of the game board. */
+    /**
+     * Minimum possible dimension of the game board.
+     */
     public static final int MIN_DIM = 4;
 
-    /** Maximum possible dimension of the game board. */
+    /**
+     * Maximum possible dimension of the game board.
+     */
     public static final int MAX_DIM = 26;
 
-    /** Symbol to represent a hound figure. */
+    /**
+     * Symbol to represent a hound figure.
+     */
     public static final char HOUND_FIELD = 'H';
 
-    /** Symbol to represent the fox figure. */
+    /**
+     * Symbol to represent the fox figure.
+     */
     public static final char FOX_FIELD = 'F';
 
     //initialisePositions when start the program
     public static String[] initialisePositions(int dim) {
         if (dim <= 0) throw new IllegalArgumentException("Negative dimension");
-        int numPlayers = dim/2+1;
+        int numPlayers = dim / 2 + 1;
         String[] str = new String[numPlayers];
 
         //position of Hound
-        for (int i = 0; i < numPlayers-1; i++){
-            str[i] = Character.toString((char) (66 + 2*i)) + 1;
+        for (int i = 0; i < numPlayers - 1; i++) {
+            str[i] = Character.toString((char) (66 + 2 * i)) + 1;
         }
 
         //position of Fox
-        if ((dim/2)%2==0)
-            str[numPlayers-1] = Character.toString((char) (64+(dim+1)/2+1)) + dim;
+        if ((dim / 2) % 2 == 0)
+            str[numPlayers - 1] = Character.toString((char) (64 + (dim + 1) / 2 + 1)) + dim;
         else
-            str[numPlayers-1] = Character.toString((char) (64+dim/2+1)) + dim;
+            str[numPlayers - 1] = Character.toString((char) (64 + dim / 2 + 1)) + dim;
 
         return str;
     }
 
     //see if the entred movememtn is correct
-    public static boolean isValidMove(int dim, String[] players, char figure, String origin, String destination){
+    public static boolean isValidMove(int dim, String[] players, char figure, String origin, String destination) {
         //test dimension
         if (dim <= 0) throw new IllegalArgumentException("Negative dimension");
 
@@ -60,23 +70,22 @@ public class FoxHoundUtils {
         boolean result = true;
         //useing while is because any of the following false the result is false
         //this is an optimisation
-        while(true){
+        while (true) {
             //correct origin compare players and figure and origin
-            switch (figure){
-                case 'H':{
-                    for (int i = 0; i<players.length-1;i++){
+            switch (figure) {
+                case 'H': {
+                    for (int i = 0; i < players.length - 1; i++) {
                         if (read(players[i])[0] == letters[0] && read(players[i])[1] == num[0]) {
                             result = true;
                             break;
-                        }
-                        else {
+                        } else {
                             result = false;
                         }
                     }
                     break;//breakpoint
                 }
-                case 'F':{
-                    if (read(players[players.length-1])[0] == letters[0] && read(players[players.length-1])[1] == num[0]) {
+                case 'F': {
+                    if (read(players[players.length - 1])[0] == letters[0] && read(players[players.length - 1])[1] == num[0]) {
                         break;//breakpoint
                     }
                     result = false;
@@ -85,13 +94,13 @@ public class FoxHoundUtils {
             if (!result) break;//while
 
             //correct range of destination, take destination and dim
-            for (int i:letters){
+            for (int i : letters) {
                 if (i > dim) {
                     result = false;
                     break;
                 }
             }
-            for (int i:num){
+            for (int i : num) {
                 if (i > dim) {
                     result = false;
                     break;
@@ -100,8 +109,8 @@ public class FoxHoundUtils {
             if (!result) break;//while
 
             //correct destination, no player at destination
-            for (String i:players){
-                if (read(i)[0] == letters[1] && read(i)[1] == num[1]){
+            for (String i : players) {
+                if (read(i)[0] == letters[1] && read(i)[1] == num[1]) {
                     result = false;
                     break;
                 }
@@ -113,37 +122,37 @@ public class FoxHoundUtils {
             int[] os = read(origin);
             // destination position get
             int[] ds = read(destination);
-            switch (figure){
-                case 'H':{
-                    result = ds[1] == os[1]+1 && (ds[0] == os[0]+1 || ds[0] == os[0]-1);
+            switch (figure) {
+                case 'H': {
+                    result = ds[1] == os[1] + 1 && (ds[0] == os[0] + 1 || ds[0] == os[0] - 1);
                     break;
                 }
-                case 'F':{
-                    result = (ds[1] == os[1]+1 || ds[1] == os[1]-1) && (ds[0] == os[0]+1 || ds[0] == os[0]-1);
+                case 'F': {
+                    result = (ds[1] == os[1] + 1 || ds[1] == os[1] - 1) && (ds[0] == os[0] + 1 || ds[0] == os[0] - 1);
                 }
             }
 
             break;//while
         }
-        if (!result){
+        if (!result) {
             System.err.println("ERROR: Invalid move. Try again!");
         }
         return result;
     }
 
     //read the position value
-    public static int[] read(String str){
+    public static int[] read(String str) {
         //origin position get
         int[] result = new int[2];
         char[] bs = str.toCharArray();
-        result[0] = bs[0]-'A'+1;//index start from 1
+        result[0] = bs[0] - 'A' + 1;//index start from 1
         //handling with 2 digit numbers
         String stringNum = Character.toString(bs[1]);
-        if (bs.length == 3){
+        if (bs.length == 3) {
             stringNum += Character.toString(bs[2]);
             //System.out.println(as[2]);//testing if as[2] exist
         }
-        if (bs.length>3){
+        if (bs.length > 3) {
             throw new IllegalArgumentException("wrong input player coordinate");
         }
         result[1] = Integer.parseInt(stringNum);
@@ -151,26 +160,26 @@ public class FoxHoundUtils {
     }
 
     //winning condition
-    public static boolean isFoxWin(String position){
+    public static boolean isFoxWin(String position) {
         int[] as = read(position);
         return (as[1] == 1);//test
     }
 
     //winning condition
-    public static boolean isHoundWin(String[] positions, int dim){
-        int[] foxMove = FoxHoundUtils.read(positions[positions.length-1]);
+    public static boolean isHoundWin(String[] positions, int dim) {
+        int[] foxMove = FoxHoundUtils.read(positions[positions.length - 1]);
         //fox can move?
         int[][] availablePosition = new int[4][2];
-        availablePosition[0] = new int[] {foxMove[0]+1,foxMove[1]+1};
-        availablePosition[0] = new int[] {foxMove[0]-1,foxMove[1]+1};
-        availablePosition[0] = new int[] {foxMove[0]+1,foxMove[1]-1};
-        availablePosition[0] = new int[] {foxMove[0]-1,foxMove[1]-1};
+        availablePosition[0] = new int[]{foxMove[0] + 1, foxMove[1] + 1};
+        availablePosition[0] = new int[]{foxMove[0] - 1, foxMove[1] + 1};
+        availablePosition[0] = new int[]{foxMove[0] + 1, foxMove[1] - 1};
+        availablePosition[0] = new int[]{foxMove[0] - 1, foxMove[1] - 1};
 
         String[] converted = new String[4];
         boolean result = true;
-        for (int i = 0; i<4; i++){
-            converted[i] = Character.toString(availablePosition[i][0]+64) + availablePosition[i][1];
-            if (isValidMove(dim, positions, 'F', positions[positions.length-1], converted[i])){
+        for (int i = 0; i < 4; i++) {
+            converted[i] = Character.toString(availablePosition[i][0] + 64) + availablePosition[i][1];
+            if (isValidMove(dim, positions, 'F', positions[positions.length - 1], converted[i])) {
                 result = false;
                 break;
             }

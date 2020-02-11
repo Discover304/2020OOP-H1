@@ -16,7 +16,7 @@ public class FoxHoundIOBasicTest {
 
     @Before
     public void setup() {
-        defaultPlayers = new String[]{"B1","D1","F1","H1","E8"};
+        defaultPlayers = new String[]{"B1", "D1", "F1", "H1", "E8"};
     }
 
     // ATTENTION:
@@ -34,7 +34,7 @@ public class FoxHoundIOBasicTest {
         assertArrayEquals("Loaded player array not as expected.", expectedPlayers, players);
         assertEquals("Loaded next move not as expected.", expectedFigure, nextFigure);
     }
-    
+
 
     @Test
     public void testLoadGameValidInput() {
@@ -91,12 +91,11 @@ public class FoxHoundIOBasicTest {
 
     @Test
     public void testLoadGameInvalidFile() {
-        Path input = Paths.get("path","to","unlikely","file.txt");
+        Path input = Paths.get("path", "to", "unlikely", "file.txt");
         String[] expectedPlayers = defaultPlayers.clone();
-        char expectedFigure = LOAD_ERROR;
 
         // invalid File
-        checkLoadedData(input, expectedPlayers, expectedFigure);
+        checkLoadedData(input, expectedPlayers, LOAD_ERROR);
     }
 
     @Test(expected = NullPointerException.class)
@@ -107,7 +106,7 @@ public class FoxHoundIOBasicTest {
     @Test(expected = IllegalArgumentException.class)
     public void testLoadGamePlayersNonDefaultDim() {
         Path input = Paths.get("game01.txt");
-        String[] players = {"B1", "D1", "F1", "H1", "J1", "E10"}; 
+        String[] players = {"B1", "D1", "F1", "H1", "J1", "E10"};
         FoxHoundIO.loadGame(players, input);
     }
 
@@ -116,11 +115,11 @@ public class FoxHoundIOBasicTest {
     private Path getTmpPath() {
         try {
             File tmpFile = File.createTempFile("foxHoundGameSave", ".txt");
-            Path tmpPath = tmpFile.toPath(); 
+            Path tmpPath = tmpFile.toPath();
             // remove it again to avoid interference with saveGame test
-            tmpFile.delete(); 
+            tmpFile.delete();
             return tmpPath;
-        } catch(IOException e) {
+        } catch (IOException e) {
             throw new UncheckedIOException("Saving file test failed.", e);
         }
     }
@@ -153,7 +152,7 @@ public class FoxHoundIOBasicTest {
         String[] expected = defaultPlayers;
         String[] players = expected.clone();
         char nextMove = FoxHoundUtils.FOX_FIELD;
-        Path saveFile = Paths.get("path","to","a","file","that","does","not","exist","game.txt");
+        Path saveFile = Paths.get("path", "to", "a", "file", "that", "does", "not", "exist", "game.txt");
         boolean result = FoxHoundIO.saveGame(players, nextMove, saveFile);
 
         assertFalse("Save not expected to be successful.", result);
@@ -167,7 +166,7 @@ public class FoxHoundIOBasicTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void testSaveGamePlayersNonDefaultDim() {
-        String[] players = {"B1", "D1", "F1", "H1", "J1", "E10"}; 
+        String[] players = {"B1", "D1", "F1", "H1", "J1", "E10"};
         char nextMove = FoxHoundUtils.FOX_FIELD;
         Path saveFile = getTmpPath();
         FoxHoundIO.saveGame(players, nextMove, saveFile);
@@ -177,16 +176,16 @@ public class FoxHoundIOBasicTest {
     public void differentDimmensionTest() {
         String[] expectedPlayers = {"C2", "D1", "F1", "H1", "D7"};
         char expectedFigure = FoxHoundUtils.FOX_FIELD;
-        assertEquals("cannot find the correct dim",8,FoxHoundIO.dimGet(expectedPlayers,expectedFigure));
+        assertEquals("cannot find the correct dim", 8, FoxHoundIO.dimGet(expectedPlayers, expectedFigure));
 
 
         expectedPlayers = new String[]{"B3", "E4", "C6", "E6", "D4"};
         expectedFigure = FoxHoundUtils.HOUND_FIELD;
-        assertEquals("cannot find the correct dim",8,FoxHoundIO.dimGet(expectedPlayers,expectedFigure));
+        assertEquals("cannot find the correct dim", 8, FoxHoundIO.dimGet(expectedPlayers, expectedFigure));
 
 
         expectedPlayers = new String[]{"B3", "D3", "F1", "H3", "A2"};
         expectedFigure = FoxHoundUtils.FOX_FIELD;
-        assertEquals("cannot find the correct dim",8,FoxHoundIO.dimGet(expectedPlayers,expectedFigure));
+        assertEquals("cannot find the correct dim", 8, FoxHoundIO.dimGet(expectedPlayers, expectedFigure));
     }
 }

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="FoxHoundUtilsBasicTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2020-02-10T23:34:31" hostname="DESKTOP-6FO5S7R" time="0.006">
+<testsuite name="FoxHoundUtilsBasicTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2020-02-11T13:35:10" hostname="DESKTOP-6FO5S7R" time="0.051">
   <properties/>
-  <testcase name="testIsHoundWinDInvalid" classname="FoxHoundUtilsBasicTest" time="0.0"/>
-  <testcase name="testIsValidMoveDestOccupied" classname="FoxHoundUtilsBasicTest" time="0.0"/>
-  <testcase name="testIsValidMovePositive" classname="FoxHoundUtilsBasicTest" time="0.0"/>
-  <testcase name="testIsFoxWinNull" classname="FoxHoundUtilsBasicTest" time="0.0"/>
-  <testcase name="testIsValidMoveInvalidFigureAtOrigin" classname="FoxHoundUtilsBasicTest" time="0.0"/>
+  <testcase name="testIsHoundWinDInvalid" classname="FoxHoundUtilsBasicTest" time="0.001"/>
+  <testcase name="testIsValidMoveDestOccupied" classname="FoxHoundUtilsBasicTest" time="0.022"/>
+  <testcase name="testIsValidMovePositive" classname="FoxHoundUtilsBasicTest" time="0.001"/>
+  <testcase name="testIsFoxWinNull" classname="FoxHoundUtilsBasicTest" time="0.001"/>
+  <testcase name="testIsValidMoveInvalidFigureAtOrigin" classname="FoxHoundUtilsBasicTest" time="0.004"/>
   <testcase name="testInitialisePositionsNegativeDim" classname="FoxHoundUtilsBasicTest" time="0.0"/>
-  <testcase name="testIsFoxWinPositive" classname="FoxHoundUtilsBasicTest" time="0.001"/>
-  <testcase name="testInitialisePositionsDefaultDim" classname="FoxHoundUtilsBasicTest" time="0.0"/>
-  <testcase name="testIsFoxWinNegative" classname="FoxHoundUtilsBasicTest" time="0.0"/>
+  <testcase name="testIsFoxWinPositive" classname="FoxHoundUtilsBasicTest" time="0.0"/>
+  <testcase name="testInitialisePositionsDefaultDim" classname="FoxHoundUtilsBasicTest" time="0.001"/>
+  <testcase name="testIsFoxWinNegative" classname="FoxHoundUtilsBasicTest" time="0.001"/>
   <testcase name="testIsValidMoveEmptyOrigin" classname="FoxHoundUtilsBasicTest" time="0.001"/>
-  <testcase name="testIsHoundWinPositive" classname="FoxHoundUtilsBasicTest" time="0.001"/>
+  <testcase name="testIsHoundWinPositive" classname="FoxHoundUtilsBasicTest" time="0.002"/>
   <testcase name="testIsHoundWinNegative" classname="FoxHoundUtilsBasicTest" time="0.0"/>
   <testcase name="testIsHoundWinPNull" classname="FoxHoundUtilsBasicTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>

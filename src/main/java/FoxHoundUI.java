@@ -5,30 +5,38 @@ import java.util.Objects;
 
 /**
  * A utility class for the fox hound program.
- *
+ * <p>
  * It contains helper functions for all user interface related
  * functionality such as printing menus and displaying the game board.
  */
 public class FoxHoundUI {
 
-    /** Number of main menu entries. */
+    /**
+     * Number of main menu entries.
+     */
     private static final int MENU_ENTRIES = 4;
 
-    /** Main menu display string. */
+    /**
+     * Main menu display string.
+     */
     private static final String MAIN_MENU = "\n1. Move\n2. Save Game\n3. Load Game\n4. Exit\nEnter 1 - 4:";
 
-    /** Menu entry to select a move action. */
+    /**
+     * Menu entry to select a move action.
+     */
     public static final int MENU_MOVE = 1;
 
     public static final int GAME_SAVE = 2;
 
     public static final int GAME_LOAD = 3;
 
-    /** Menu entry to terminate the program. */
+    /**
+     * Menu entry to terminate the program.
+     */
     public static final int MENU_EXIT = 4;
 
     //print the board
-    public static void displayBoard(String[] players, int dim){
+    public static void displayBoard(String[] players, int dim) {
         //get letter labels
         pLetters(dim);
 
@@ -37,41 +45,39 @@ public class FoxHoundUI {
 
         //get number labels
         String[] numbers = new String[dim];
-        if(dim<9){
-            for(int i = 0; i<dim; i++){
-                numbers[i] = Integer.toString(i+1);
+        if (dim < 9) {
+            for (int i = 0; i < dim; i++) {
+                numbers[i] = Integer.toString(i + 1);
             }
-        }
-        else {
-            for(int i = 0; i<dim; i++){
-                if (i<9){
+        } else {
+            for (int i = 0; i < dim; i++) {
+                if (i < 9) {
                     numbers[i] = "0" + (i + 1);
-                }
-                else numbers[i] = Integer.toString(i+1);
+                } else numbers[i] = Integer.toString(i + 1);
             }
         }
 
         //get board
         char[][] posi = new char[dim][dim];
-        for (int i = 0; i<dim; i++){
-            for (int j = 0; j<dim; j++) posi[i][j] = '.';
+        for (int i = 0; i < dim; i++) {
+            for (int j = 0; j < dim; j++) posi[i][j] = '.';
         }
 
         //place players on board
-        for (int i = 0; i< players.length; i++){
+        for (int i = 0; i < players.length; i++) {
             int[] temp = FoxHoundUtils.read(players[i]);
-            if(i == players.length-1){
-                posi [temp[0]-1][temp[1]-1] = FoxHoundUtils.FOX_FIELD;
+            if (i == players.length - 1) {
+                posi[temp[0] - 1][temp[1] - 1] = FoxHoundUtils.FOX_FIELD;
                 break;
             }
-            posi [temp[0]-1][temp[1]-1] = FoxHoundUtils.HOUND_FIELD;
+            posi[temp[0] - 1][temp[1] - 1] = FoxHoundUtils.HOUND_FIELD;
         }
 
         //print number labels + board + number labels
-        for (int i = 0; i<dim; i++){
-            System.out.print(numbers[i]+" ");
-            for (int j = 0; j<dim; j++) System.out.print(posi[j][i]);
-            System.out.print(" "+numbers[i]+"\n");
+        for (int i = 0; i < dim; i++) {
+            System.out.print(numbers[i] + " ");
+            for (int j = 0; j < dim; j++) System.out.print(posi[j][i]);
+            System.out.print(" " + numbers[i] + "\n");
         }
 
         //print letter labels again
@@ -79,16 +85,16 @@ public class FoxHoundUI {
     }
 
     //this is for display the letters line
-    private static void pLetters(int dim){
+    private static void pLetters(int dim) {
         System.out.print("\n");
-        if (dim<10) System.out.print("  ");
+        if (dim < 10) System.out.print("  ");
         else System.out.print("   ");
         char[] letters = new char[dim];
-        for(int i = 0; i<dim; i++){
-            letters[i] = (char) ('A'+i);
+        for (int i = 0; i < dim; i++) {
+            letters[i] = (char) ('A' + i);
             System.out.print(letters[i]);
         }
-        if (dim<10) System.out.print("  ");
+        if (dim < 10) System.out.print("  ");
         else System.out.print("   ");
         System.out.print("\n");
     }
@@ -97,10 +103,10 @@ public class FoxHoundUI {
      * Print the main menu and query the user for an entry selection.
      *
      * @param figureToMove the figure type that has the next move
-     * @param stdin a Scanner object to read user input from
+     * @param stdin        a Scanner object to read user input from
      * @return a number representing the menu entry selected by the user
      * @throws IllegalArgumentException if the given figure type is invalid
-     * @throws NullPointerException if the given Scanner is null
+     * @throws NullPointerException     if the given Scanner is null
      */
     //main menu interface
     public static int mainMenuQuery(char figureToMove, Scanner stdin) {
@@ -110,7 +116,7 @@ public class FoxHoundUI {
         }
 
         String nextFigure =
-            figureToMove == FoxHoundUtils.FOX_FIELD ? "Fox" : "Hounds";
+                figureToMove == FoxHoundUtils.FOX_FIELD ? "Fox" : "Hounds";
 
         int input = -1;
         while (input == -1) {
@@ -135,15 +141,15 @@ public class FoxHoundUI {
     }
 
     // ask for next movement.
-    public static String[] positionQuery(int dim, Scanner stdin){
+    public static String[] positionQuery(int dim, Scanner stdin) {
         String[] result = new String[2];
 
         //check validity
         boolean validity = false;
-        while(!validity){
+        while (!validity) {
             //print menu
             System.out.print("Provide origin and destination coordinates.\n");
-            String largestRange = "A1" + "-" + (char) ('A'+dim-1) + dim;
+            String largestRange = "A1" + "-" + (char) ('A' + dim - 1) + dim;
             System.out.print("Enter two positions between " + largestRange + ":\n");
 
             //read input
@@ -154,16 +160,14 @@ public class FoxHoundUI {
             char[][] chars = new char[2][];
             chars[0] = result[0].toCharArray();
             chars[1] = result[1].toCharArray();
-            for (char[] x: chars){
-                if (!Character.isLetter(x[0])){
+            for (char[] x : chars) {
+                if (!Character.isLetter(x[0])) {
                     break;
-                }
-                else if (dim>9){
-                    validity = (x.length==2&&Character.isDigit(x[1]))||(x.length==3&&Character.isDigit(x[1])&&Character.isDigit(x[2]));
+                } else if (dim > 9) {
+                    validity = (x.length == 2 && Character.isDigit(x[1])) || (x.length == 3 && Character.isDigit(x[1]) && Character.isDigit(x[2]));
                     break;
-                }
-                else {
-                    validity = x.length==2&&Character.isDigit(x[1]);
+                } else {
+                    validity = x.length == 2 && Character.isDigit(x[1]);
                     break;
                 }
             }

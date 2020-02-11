@@ -7,6 +7,7 @@ import java.util.Scanner;
 import java.nio.file.Path;
 
 import static org.junit.Assert.*;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -22,11 +23,11 @@ public class FoxHoundUIBasicTest {
     private String[] defaultPlayers;
     private String defaultOutput;
 
-    private static final String POS_QUERY_MSG = 
-        "Provide origin and destination coordinates.\n" + 
-        "Enter two positions between A1-H8:";
-    private static final String POS_QUERY_ERROR = 
-        "ERROR: Please enter valid coordinate pair separated by space.";
+    private static final String POS_QUERY_MSG =
+            "Provide origin and destination coordinates.\n" +
+                    "Enter two positions between A1-H8:";
+    private static final String POS_QUERY_ERROR =
+            "ERROR: Please enter valid coordinate pair separated by space.";
     private static final String VALID_MOVE = "E8 F7";
     private static final String INVALID_MOVE = "124 asd";
 
@@ -35,24 +36,25 @@ public class FoxHoundUIBasicTest {
 
     @Before
     public void setup() {
-        defaultPlayers = new String[]{"B1","D1","F1","H1","E8"};
+        defaultPlayers = new String[]{"B1", "D1", "F1", "H1", "E8"};
         defaultOutput =
-        "  ABCDEFGH  \n" +
-        "\n" +
-        "1 .H.H.H.H 1\n" +
-        "2 ........ 2\n" +
-        "3 ........ 3\n" +
-        "4 ........ 4\n" +
-        "5 ........ 5\n" +
-        "6 ........ 6\n" +
-        "7 ........ 7\n" +
-        "8 ....F... 8\n" +
-        "\n" +
-        "  ABCDEFGH  ";
+                "  ABCDEFGH  \n" +
+                        "\n" +
+                        "1 .H.H.H.H 1\n" +
+                        "2 ........ 2\n" +
+                        "3 ........ 3\n" +
+                        "4 ........ 4\n" +
+                        "5 ........ 5\n" +
+                        "6 ........ 6\n" +
+                        "7 ........ 7\n" +
+                        "8 ....F... 8\n" +
+                        "\n" +
+                        "  ABCDEFGH  ";
     }
 
     /**
      * Reroute standard output and standard error into temporary output streams.
+     *
      * @throws RuntimeException if capturing has already started.
      */
     private void stdCaptureStart() {
@@ -71,6 +73,7 @@ public class FoxHoundUIBasicTest {
 
     /**
      * Reset the standard output and standard error to their original streams.
+     *
      * @throws RuntimeException if capturing has not yet started.
      */
     private void stdCaptureStop() {
@@ -89,6 +92,7 @@ public class FoxHoundUIBasicTest {
 
     /**
      * Return the result of the captured standard output.
+     *
      * @return the standard output since rerouting started.
      * @throws RuntimeException if capturing is not activated.
      */
@@ -101,6 +105,7 @@ public class FoxHoundUIBasicTest {
 
     /**
      * Return the result of the captured standard error.
+     *
      * @return the standard error since rerouting started.
      * @throws RuntimeException if capturing is not activated.
      */
@@ -124,15 +129,15 @@ public class FoxHoundUIBasicTest {
             try {
                 FoxHoundUI.displayBoard(players, dim);
             } catch (Exception e) {
-                System.err.println("Error executing displayBoard " + 
-                    " for console output check:" + e);
+                System.err.println("Error executing displayBoard " +
+                        " for console output check:" + e);
             }
             // ignore leading and trailing white spaces
-            assertEquals("Console output not as expected in displayBoard.", 
-                expected.replaceAll("\r","").trim(), getCapturedStdOut().replaceAll("\r","").trim());
+            assertEquals("Console output not as expected in displayBoard.",
+                    expected.replaceAll("\r", "").trim(), getCapturedStdOut().replaceAll("\r", "").trim());
         } finally {
             stdCaptureStop();
-        } 
+        }
     }
 
     // ------------------------- positionQuery --------------------
@@ -145,15 +150,15 @@ public class FoxHoundUIBasicTest {
             try {
                 FoxHoundUI.positionQuery(dim, TEST_IN);
             } catch (Exception e) {
-                fail("Error executing positionQuery " + 
-                    "for console output check:" + e);
+                fail("Error executing positionQuery " +
+                        "for console output check:" + e);
             }
             // ignore leading and trailing white spaces
             // and use unix line endings
             assertEquals("Console output stdout not as expected in positionQuery: " + inputLine,
-                expectedStdOut.trim().replaceAll("\r", ""), getCapturedStdOut().trim().replaceAll("\r", ""));
+                    expectedStdOut.trim().replaceAll("\r", ""), getCapturedStdOut().trim().replaceAll("\r", ""));
             assertEquals("Console output stderr not as expected in positionQuery: " + inputLine,
-                expectedStdErr.trim().replaceAll("\r", ""), getCapturedStdErr().trim().replaceAll("\r", ""));
+                    expectedStdErr.trim().replaceAll("\r", ""), getCapturedStdErr().trim().replaceAll("\r", ""));
         } finally {
             stdCaptureStop();
         }
@@ -163,12 +168,11 @@ public class FoxHoundUIBasicTest {
     @Test
     public void testPositionQueryMessage() {
         int dim = FoxHoundUtils.DEFAULT_DIM;
-        String expectedStdOut = POS_QUERY_MSG;
         // no error message expected
-        String expectedStdErr = ""; 
+        String expectedStdErr = "";
         String inputLine = VALID_MOVE + "\n";
 
-        checkPosQueryOutput(dim, expectedStdOut, expectedStdErr, inputLine);
+        checkPosQueryOutput(dim, POS_QUERY_MSG, expectedStdErr, inputLine);
     }
 
     @Test
@@ -176,20 +180,19 @@ public class FoxHoundUIBasicTest {
         int dim = FoxHoundUtils.DEFAULT_DIM;
         // repeated message expected due to invalid input
         String expectedStdOut = POS_QUERY_MSG + "\r\n\r\n" + POS_QUERY_MSG;
-        String expectedStdErr = POS_QUERY_ERROR;
         // enter invalid move first, then valid move
         String inputLine = INVALID_MOVE + "\n" + VALID_MOVE + "\n";
 
-        checkPosQueryOutput(dim, expectedStdOut, expectedStdErr, inputLine);
+        checkPosQueryOutput(dim, expectedStdOut, POS_QUERY_ERROR, inputLine);
     }
 
     @Test
     public void testPositionQueryReturn() {
         int dim = FoxHoundUtils.DEFAULT_DIM;
-        String[] expected = {"E8","D7"};
+        String[] expected = {"E8", "D7"};
         String inputLine = expected[0] + " " + expected[1] + "\n";
         Scanner TEST_IN = new Scanner(new ByteArrayInputStream(inputLine.getBytes()));
-        
+
         String[] result = FoxHoundUI.positionQuery(dim, TEST_IN);
         TEST_IN.close();
 
@@ -198,7 +201,7 @@ public class FoxHoundUIBasicTest {
 
     // ------------------------- fileQuery --------------------
 
-    private void checkFileQueryOutput(String expectedStdOut, String expectedStdErr, String inputLine) {
+    private void checkFileQueryOutput(String expectedStdErr, String inputLine) {
         Scanner TEST_IN = new Scanner(new ByteArrayInputStream(inputLine.getBytes()));
 
         stdCaptureStart();
@@ -206,14 +209,14 @@ public class FoxHoundUIBasicTest {
             try {
                 FoxHoundUI.fileQuery(TEST_IN);
             } catch (Exception e) {
-                fail("Error executing fileQuery " + 
-                    "for console output check:" + e);
+                fail("Error executing fileQuery " +
+                        "for console output check:" + e);
             }
             // ignore leading and trailing white spaces
-            assertEquals("Console output stdout not as expected in fileQuery: " + inputLine, 
-                expectedStdOut.replace("\r","").trim(), getCapturedStdOut().replaceAll("\r","").trim());
+            assertEquals("Console output stdout not as expected in fileQuery: " + inputLine,
+                    FoxHoundUIBasicTest.FILE_QUERY_MSG.replace("\r", "").trim(), getCapturedStdOut().replaceAll("\r", "").trim());
             assertEquals("Console output stderr not as expected in fileQuery: " + inputLine,
-                expectedStdErr.replace("\r","").trim(), getCapturedStdErr().replaceAll("\r","").trim());
+                    expectedStdErr.replace("\r", "").trim(), getCapturedStdErr().replaceAll("\r", "").trim());
         } finally {
             stdCaptureStop();
         }
@@ -222,22 +225,20 @@ public class FoxHoundUIBasicTest {
 
     @Test
     public void testFileQueryMessage() {
-        String expectedStdOut = FILE_QUERY_MSG;
         // no error message expected
-        String expectedStdErr = ""; 
-        String inputLine = Paths.get("path","to","file","game01.txt").toString();
+        String expectedStdErr = "";
+        String inputLine = Paths.get("path", "to", "file", "game01.txt").toString();
 
-        checkFileQueryOutput(expectedStdOut, expectedStdErr, inputLine);
+        checkFileQueryOutput(expectedStdErr, inputLine);
     }
 
     @Test
     public void testFileQueryReturn() {
-        String inputLine = Paths.get("path","to","file","game01.txt").toString();
-        String expected = inputLine;
+        String inputLine = Paths.get("path", "to", "file", "game01.txt").toString();
         Scanner TEST_IN = new Scanner(new ByteArrayInputStream(inputLine.getBytes()));
         Path result = FoxHoundUI.fileQuery(TEST_IN);
         TEST_IN.close();
 
-        assertEquals("Resulting path not as expected.", expected, result.toString());
+        assertEquals("Resulting path not as expected.", inputLine, result.toString());
     }
 }
