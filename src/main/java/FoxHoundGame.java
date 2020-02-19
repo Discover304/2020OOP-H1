@@ -73,7 +73,7 @@ public class FoxHoundGame {
             //if All Hound reach the last line
             if (turn == FoxHoundUtils.HOUND_FIELD) {
                 for (int i = 0; i < players.length - 2; i++) {
-                    if (FoxHoundUtils.read(players[i])[1] == dim) {
+                    if (FoxHoundUtils.read(players[i])[1] != dim) {
                         turn = FoxHoundUtils.HOUND_FIELD;
                         break;
                     }

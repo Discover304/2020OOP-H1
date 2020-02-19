@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class FoxHoundIO {
 
     //save game with default dimension
-    public static boolean saveGame(String[] players, char turn, Path pathSave) {
+    public static boolean saveGame(final String[] players, final char turn, final Path pathSave) {
         //basic test
         //is the dimension equals to default
         if (players.length != FoxHoundUtils.initialisePositions(FoxHoundUtils.DEFAULT_DIM).length)
@@ -21,7 +21,7 @@ public class FoxHoundIO {
     }
 
     //this is saving for different dim
-    public static boolean saveGameDim(String[] players, char turn, Path pathSave) {
+    public static boolean saveGameDim(final String[] players, final char turn, final Path pathSave) {
         //is the path good
         if (pathSave == null)
             throw new NullPointerException("no path given");
@@ -36,17 +36,17 @@ public class FoxHoundIO {
         try {
             outFile = new FileWriter(String.valueOf(pathSave));
             outFile.write(turn + " ");
-            for (String i : players) outFile.write(i + " ");
+            for (final String i : players) outFile.write(i + " ");
             outFile.close();
             return true;
-        } catch (Exception e) {
+        } catch (final Exception e) {
             System.out.println("Saving file failed, please try again");
             return false;
         }
     }
 
     //onlyLoad the game with default dimension
-    public static char loadGame(String[] players, Path pathLoad) {
+    public static char loadGame(final String[] players, final Path pathLoad) {
         //test part
         //testing things are at there initial position, for default dimension
         if (players.length != FoxHoundUtils.initialisePositions(FoxHoundUtils.DEFAULT_DIM).length)
@@ -65,14 +65,14 @@ public class FoxHoundIO {
                 return '#';
 
             //see if the second line has something
-            Scanner testScanning = new Scanner(pathLoad);
+            final Scanner testScanning = new Scanner(pathLoad);
             testScanning.nextLine();
             if (testScanning.hasNextLine()) return '#';
             testScanning.close();
 
             //read the data
-            Scanner scan = new Scanner(pathLoad);
-            String[] temp = new String[26];//number of players would not larger than this value
+            final Scanner scan = new Scanner(pathLoad);
+            final String[] temp = new String[26];//number of players would not larger than this value
             int count = 0;
             for (int i = 0; scan.hasNext(); i++) {
                 temp[i] = scan.next();
@@ -98,13 +98,13 @@ public class FoxHoundIO {
             for (int i = 1; i < scannedText.length; i++) {//start forom 1 is because the first one is turn
 
                 //each coordinate has a letter axises
-                char[] bs = scannedText[i].toCharArray();
+                final char[] bs = scannedText[i].toCharArray();
                 if (!Character.isAlphabetic(bs[0]))
                     return '#';
-                int[] coordinate = FoxHoundUtils.read(scannedText[i]);
+                final int[] coordinate = FoxHoundUtils.read(scannedText[i]);
 
                 //correct range of coordinate
-                for (int j : coordinate) {
+                for (final int j : coordinate) {
                     if (!(j >= 1 && j <= FoxHoundUtils.DEFAULT_DIM))//this may need to change to dim
                         return '#';
                 }
@@ -113,13 +113,13 @@ public class FoxHoundIO {
                 if (((coordinate[0] + coordinate[1]) - 1) % 2 == 1)//the total length in a taxi-cub coordinate
                     return '#';
             }
-        } catch (Exception e) {
+        } catch (final Exception e) {
             System.out.println("loading process has some error");
             return '#';
         }
 
         //give turn
-        char turn = scannedText[0].charAt(0);
+        final char turn = scannedText[0].charAt(0);
 
         //change values of players
         System.arraycopy(scannedText, 1, players, 0, scannedText.length - 1);
@@ -129,7 +129,7 @@ public class FoxHoundIO {
 
     //this is the condition that loading game with a different dimension
     //if this is used the position where this is called need to add another function in order to update the dimension.
-    public static char loadGameDim(String[] players, Path pathLoad) {
+    public static char loadGameDim(String[] players, final Path pathLoad) {
         //test part
         //testing things are at there initial position, for default dimension
         if (players.length != FoxHoundUtils.initialisePositions(dimGet(players, FoxHoundUtils.FOX_FIELD)).length)
@@ -148,14 +148,14 @@ public class FoxHoundIO {
                 return '#';
 
             //see if the second line has something
-            Scanner testScanning = new Scanner(pathLoad);
+            final Scanner testScanning = new Scanner(pathLoad);
             testScanning.nextLine();
             if (testScanning.hasNextLine()) return '#';
             testScanning.close();
 
             //read the data
-            Scanner scan = new Scanner(pathLoad);
-            String[] temp = new String[26];//number of players would not larger than this value
+            final Scanner scan = new Scanner(pathLoad);
+            final String[] temp = new String[26];//number of players would not larger than this value
             int count = 0;
             for (int i = 0; scan.hasNext(); i++) {
                 temp[i] = scan.next();
@@ -181,18 +181,18 @@ public class FoxHoundIO {
             for (int i = 1; i < scannedText.length; i++) {//start forom 1 is because the first one is turn
 
                 //each coordinate has a letter axises
-                char[] bs = scannedText[i].toCharArray();
+                final char[] bs = scannedText[i].toCharArray();
                 if (!Character.isAlphabetic(bs[0]))
                     return '#';
-                int[] coordinate = FoxHoundUtils.read(scannedText[i]);
+                final int[] coordinate = FoxHoundUtils.read(scannedText[i]);
 
                 //see what is the dimension
-                String[] tempPlayers = new String[scannedText.length - 1];
+                final String[] tempPlayers = new String[scannedText.length - 1];
                 System.arraycopy(scannedText, 1, tempPlayers, 0, scannedText.length - 1);
-                int dim = dimGet(tempPlayers, scannedText[0].charAt(0));
+                final int dim = dimGet(tempPlayers, scannedText[0].charAt(0));
 
                 //correct range of coordinate
-                for (int j : coordinate) {
+                for (final int j : coordinate) {
                     if (!(j >= 1 && j <= dim))//this may need to change to dim
                         return '#';
                 }
@@ -201,13 +201,13 @@ public class FoxHoundIO {
                 if (((coordinate[0] + coordinate[1]) - 1) % 2 == 1)//the total length in a taxi-cub coordinate
                     return '#';
             }
-        } catch (Exception e) {
+        } catch (final Exception e) {
             System.out.println("loading process has some error");
             return '#';
         }
 
         //give turn
-        char turn = scannedText[0].charAt(0);
+        final char turn = scannedText[0].charAt(0);
 
         players = new String[scannedText.length - 1];
 
@@ -218,8 +218,8 @@ public class FoxHoundIO {
     }
 
     //this is the function determine the loaded game dimension
-    public static int dimGet(String[] players, char turn) {
-        int[][] coordinates = new int[players.length][];
+    public static int dimGet(final String[] players, final char turn) {
+        final int[][] coordinates = new int[players.length][];
 
         //read fox coordinate
         coordinates[players.length - 1] = FoxHoundUtils.read(players[players.length - 1]);
@@ -237,7 +237,7 @@ public class FoxHoundIO {
         }
 
         //number of found determines the dimension
-        int[] tempDim = {(players.length - 1) * 2, (players.length - 1) * 2 + 1};
+        final int[] tempDim = {(players.length - 1) * 2, (players.length - 1) * 2 + 1};
 
         int dimension;
 
