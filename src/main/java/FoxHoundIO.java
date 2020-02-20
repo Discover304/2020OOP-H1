@@ -48,13 +48,13 @@ public class FoxHoundIO {
     //onlyLoad the game with default dimension
     public static char loadGame(final String[] players, final Path pathLoad) {
         //test part
+        //if path good
+        if (pathLoad == null||players == null)
+            throw new NullPointerException("path is empty");
+
         //testing things are at there initial position, for default dimension
         if (players.length != FoxHoundUtils.initialisePositions(FoxHoundUtils.DEFAULT_DIM).length)
             throw new IllegalArgumentException("dimension is not match");
-
-        //if path good
-        if (pathLoad == null)
-            throw new NullPointerException("path is empty");
 
         //loading part
         //take the value from txt
